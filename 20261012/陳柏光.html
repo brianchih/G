@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳柏光 研究架構與工作報告</title>
+    <style>
+        :root {
+            --primary-color: #0f766e;
+            --secondary-color: #14b8a6;
+            --accent-color: #0284c7;
+            --warning-color: #d97706;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            margin-bottom: 24px;
+        }
+
+        header h1 {
+            margin: 0 0 8px 0;
+            font-size: 26px;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .card-full {
+            grid-column: 1 / -1;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 18px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .highlight-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .warning-box {
+            background-color: #fffbeb;
+            border-left: 4px solid var(--warning-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #ccfbf1;
+            color: var(--primary-color);
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 13px;
+            margin-right: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f8fafc;
+            color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>陳柏光 研究構想與數據分析專案會報</h1>
+        <p>主題：勞動部大專畢業生就業資料庫整合與 Stanford AI 金絲雀文獻研析</p>
+    </header>
+
+    <div class="grid">
+        <!-- 研究核心主題 -->
+        <div class="card card-full">
+            <h2>🎯 研究目標與資料庫核心架構</h2>
+            <p>探討生成式 AI 技術爆發後，大專畢業生與整體勞動市場在不同產業間的<strong>就業流向、青年就業衝擊與薪資結構變化</strong>：</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>資料庫來源</th>
+                        <th>涵蓋數據維度與欄位</th>
+                        <th>清理難點與處置策略</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>勞動部大專畢業生追蹤資料庫</strong><br>(100年 - 115年7月)</td>
+                        <td>畢業人數、學門分類、性別、教育程度 (學士/碩士/博士)、投保人數、就業率、轉職狀況等。</td>
+                        <td>原始資料按半年度切分為多個 Excel 檔案，需進行自動化合併與變數標準化清理。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>初任人員薪資統計 / 勞健報稅資料</strong></td>
+                        <td>勞保申報投保薪資分級、公司規模、產業領域分佈、第一份工作薪資狀況等。</td>
+                        <td>薪資為分級或門檻數據，且高薪產業人數少、低薪產業人數多，需注意非線性關係。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Stanford 文獻研析 -->
+        <div class="card">
+            <h2>🐥 Stanford AI「金絲雀效應」文獻摘要</h2>
+            <div class="highlight-box">
+                <strong>礦坑裡的金絲雀 (Canary in the Coal Mine)：</strong><br>
+                史丹佛數位經濟研究所研究顯示，生成式 AI 爆發對整體就業率無劇烈衝擊，但對<strong>初入職場之青年族群</strong>產生顯著預警性衝擊。
+            </div>
+            <ul>
+                <li><span class="badge">青年就業</span> 高 AI 暴露度 (AI Exposure) 職業中，青年求職者就業率顯著下滑，高低暴露度差距從 15% 擴大至 19%。</li>
+                <li><span class="badge">替代與互補</span> 青年人力遭受顯著「替代效應」；資深員工具備「互補效應」，生產力與穩定度提升。</li>
+                <li><span class="badge">企業策略</span> 企業選擇凍結/縮減初級新人招募，轉而培訓資深員工掌握 AI 技術。</li>
+            </ul>
+        </div>
+
+        <!-- 擬探討之研究變數與挑戰 -->
+        <div class="card">
+            <h2>⚙️ 因果鏈結與計量模型挑戰</h2>
+            <div class="warning-box">
+                <strong>因果鏈結 (Causal Link) 建立疑慮：</strong><br>
+                單憑薪資或人數變化難以直接證明勞工「具備 AI 技能」或「產出效率提升」，需精確區分 <strong>AI 開發端</strong> 與 <strong>AI 應用端</strong> 的效益。
+            </div>
+            <ul>
+                <li><strong>AI 暴露度指標 (AI Exposure Index)：</strong> 參考 Stanford 文獻方法，建立不同職業/產業對 AI 的曝露指標。</li>
+                <li><strong>校友資料補充：</strong> 評估淡江大學校友追蹤問卷（1, 3, 5 年）作為個體（Microdata）補充之可行性。</li>
+            </ul>
+        </div>
+
+        <!-- 近期工作待辦清單 -->
+        <div class="card card-full">
+            <h2>📋 近期工作待辦清單 (Action Items)</h2>
+            <ol>
+                <li>
+                    <strong>批次整合勞動部 Excel 數據：</strong><br>
+                    撰寫清理腳本（Python/R），將 100 年至 115 年 7 月分開下載的大專畢業生與薪資檔合併為單一面板資料庫 (Panel Data)。
+                </li>
+                <li>
+                    <strong>精讀 Stanford 金絲雀論文與計量設定：</strong><br>
+                    將長篇英文論文透過 NotebookLM 進行變數摘要，釐清其「AI 暴露度 (AI Exposure)」的數學定義與敘述統計方法。
+                </li>
+                <li>
+                    <strong>校友追蹤資料庫對接評估：</strong><br>
+                    向學校教務處/學務處/職職單位詢問淡江大學畢業生追蹤資料庫欄位，評估是否包含課程修習與 AI 工具使用體驗。
+                </li>
+                <li>
+                    <strong>確立研究主題與對稱實證：</strong><br>
+                    擬定本土資料對接 Stanford AI 衝擊框架的具體假說與實證模型。
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 淡江大學 經濟學系 - 陳柏光 研究專案紀錄</p>
+    </footer>
+</div>
+
+</body>
+</html>

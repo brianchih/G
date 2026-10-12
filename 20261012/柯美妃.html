@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>柯美妃 博士論文研究架構與工作報告</title>
+    <style>
+        :root {
+            --primary-color: #4338ca;
+            --secondary-color: #6366f1;
+            --accent-color: #059669;
+            --warning-color: #d97706;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            margin-bottom: 24px;
+        }
+
+        header h1 {
+            margin: 0 0 8px 0;
+            font-size: 26px;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .card-full {
+            grid-column: 1 / -1;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 18px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .highlight-box {
+            background-color: #ecfdf5;
+            border-left: 4px solid var(--accent-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .warning-box {
+            background-color: #fffbeb;
+            border-left: 4px solid var(--warning-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .paper-number {
+            display: inline-block;
+            background-color: #e0e7ff;
+            color: var(--primary-color);
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 13px;
+            margin-right: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f8fafc;
+            color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>柯美妃 博士論文研究專案會報</h1>
+        <p>論文核心：Agent-Based Modeling (ABM) 於生成式 AI 市場定價、私有化資訊與法律經濟學之應用</p>
+    </header>
+
+    <div class="grid">
+        <!-- 核心研究主軸 -->
+        <div class="card card-full">
+            <h2>🎯 博士論文三篇核心架構 (Three-Paper Dissertation)</h2>
+            <p>以 <strong>Agent-Based Modeling (ABM) / 智慧代理人演化賽局</strong> 為貫穿主軸，探討生成式 AI 在市場、企業與法規三維度下的動態演化：</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>篇章別</th>
+                        <th>研究主題 (Topic)</th>
+                        <th>核心問題意識與應用機制</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="paper-number">第一篇</span><strong>市場定價</strong></td>
+                        <td>生成式 AI 寡占市場定價與賽局演化模型</td>
+                        <td>探討粘性需求、恐怖平衡下的分級定價（$20/月與高階算力收費）及智慧 Agent 決策。</td>
+                    </tr>
+                    <tr>
+                        <td><span class="paper-number">第二篇</span><strong>企業資訊</strong></td>
+                        <td>企業私有化 AI (Private AI) 與資訊不對稱</td>
+                        <td>評估敏感資料企業建立私有牆 (Data Wall) 後對整體市場資訊流動與資源配置效率之影響。</td>
+                    </tr>
+                    <tr>
+                        <td><span class="paper-number">第三篇</span><strong>法規治理</strong></td>
+                        <td>AI 時代下的法律經濟學 (Law & Economics)</td>
+                        <td>探討智慧財產權、邊界與責任歸屬等法律規範對 AI 研發與市場演化之內生影響。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 第一篇重點拆解：定價賽局 -->
+        <div class="card">
+            <h2>💡 第一篇深度剖析：寡占定價賽局</h2>
+            <div class="warning-box">
+                <strong>現狀觀察（恐怖平衡與折角需求）：</strong><br>
+                消費者對 AI 已產生極高黏性（如 UC Berkeley 研究顯示無 AI 會產生「變笨效應」）。然而目前廠商不敢單方面取消免費版，源於<strong>競爭者眾多且產品替代性高</strong>，存在「誰先放炮誰先死」的囚犯困境。
+            </div>
+            <ul>
+                <li><strong>默契定價：</strong> 入門付費版 $20 美元形成市場默契與價格剛性。</li>
+                <li><strong>差別訂價 (Price Discrimination)：</strong> 廠商開始嘗試高級版、企業版與單次高階算力收費。</li>
+                <li><strong>免費版誘因：</strong> 獲取小白老鼠的使用者提問與偏好資料以訓練模型。</li>
+            </ul>
+        </div>
+
+        <!-- 導師建議與 ABM 創新 -->
+        <div class="card">
+            <h2>⚙️ 模型創新與導師建議</h2>
+            <div class="highlight-box">
+                <strong>ABM Agent 決策升級：</strong><br>
+                以往賽局（如演化賽局中的「以牙還牙策略 Tit-for-Tat」）假設代理人較為簡單。本研究引入<strong>具備智慧與情境評估能力之 AI Agent</strong>，模擬廠商與消費者的動態交互。
+            </div>
+            <ul>
+                <li><strong>對接傳統理論：</strong> 回顧寡占市場之折角需求曲線 (Kinked Demand Curve) 與演化賽局 (Evolutionary Game)。</li>
+                <li><strong>結合消費者心理：</strong> 融入品質偏好、資訊不對稱與「電量焦慮」式的取消服務焦慮感。</li>
+            </ul>
+        </div>
+
+        <!-- 近期工作待辦清單 -->
+        <div class="card card-full">
+            <h2>📋 近期工作待辦清單 (Action Items)</h2>
+            <ol>
+                <li>
+                    <strong>梳理寡占定價與演化賽局文獻：</strong><br>
+                    回顧折角需求曲線、寡占賽局 (Oligopoly Game) 及以牙還牙 (Tit-for-Tat) 等經典理論。
+                </li>
+                <li>
+                    <strong>蒐集主流 AI 廠商商業定價參數：</strong><br>
+                    整理 OpenAI、Google Gemini、Anthropic Claude 之免費/付費/企業版方案與 API 算力計費數據，作為 ABM 參數設定依據。
+                </li>
+                <li>
+                    <strong>建立第一篇 ABM 數學模型與規則設定：</strong><br>
+                    定義智慧 Agent 的決策函數（含品質偏好、價格敏感度與轉換成本）。
+                </li>
+                <li>
+                    <strong>釐清第二與第三篇之邏輯脈絡：</strong><br>
+                    進一步定錨私有化 AI 資訊障礙與法律經濟學模型的變數與研究範疇。
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 淡江大學 經濟學系 - 柯美妃 博士論文研究專案紀錄</p>
+    </footer>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>林裕芳 研究架構與工作報告</title>
+    <style>
+        :root {
+            --primary-color: #991b1b;
+            --secondary-color: #dc2626;
+            --accent-color: #d97706;
+            --info-color: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            margin-bottom: 24px;
+        }
+
+        header h1 {
+            margin: 0 0 8px 0;
+            font-size: 26px;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .card-full {
+            grid-column: 1 / -1;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 18px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .highlight-box {
+            background-color: #fef2f2;
+            border-left: 4px solid var(--secondary-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .warning-box {
+            background-color: #fffbeb;
+            border-left: 4px solid var(--accent-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #fee2e2;
+            color: var(--primary-color);
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 13px;
+            margin-right: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f8fafc;
+            color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>林裕芳 研究構想與數據分析專案會報</h1>
+        <p>主題：生成式 AI 對台灣詐欺與犯罪趨勢之影響分析及警政資料清理</p>
+    </header>
+
+    <div class="grid">
+        <!-- 研究目標與問題意識 -->
+        <div class="card card-full">
+            <h2>🎯 研究主題與資料庫現況</h2>
+            <p>探討 2015 年（104 年）至 2025 年（114 年）生成式 AI 技術爆發前後，台灣<strong>詐欺案件量、金融犯罪類型、財損規模及受害特徵</strong>之演變：</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>資料來源</th>
+                        <th>資料範疇與優勢</th>
+                        <th>核心限制與統計挑戰</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>165 反詐騙網站視覺化看板</strong></td>
+                        <td>包含單月案件數、財損總金額、受害人數、縣市分佈與詐騙手法分類。</td>
+                        <td>看板公開資料僅自 <strong>113 年 8 月起算</strong>，缺乏歷史長期縱向數據與個案細項。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>警政署刑案統計資料庫</strong></td>
+                        <td>涵蓋多年期發生數、破獲數、犯罪嫌疑人與被害人數。</td>
+                        <td><strong>113 年 9 月發生統計計算變革（外生衝擊）</strong>，導致數據陡增至數萬件，需剔除統計制度影響。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 制度衝擊警示 (113年9月改革) -->
+        <div class="card">
+            <h2>⚠️ 關鍵外生衝擊：警政統計定義改革</h2>
+            <div class="highlight-box">
+                <strong>113 年 9 月前與後之計算變革：</strong><br>
+                若未剔除制度變革衝擊，將無法反映真實的犯罪趨勢與 AI 技術普及效應。
+            </div>
+            <ul>
+                <li><span class="badge">舊制（113年8月前）</span> 採「一案已發生數」。例如 1 個詐騙集團騙 3 名被害人報案，統計採計為 <strong>1 件</strong>。</li>
+                <li><span class="badge">新制（113年9月起）</span> 採「一被害者一發生數」。同樣案例由系統自動生成 <strong>3 件</strong> 紀錄。</li>
+                <li><span class="badge">數據異常</span> 此轉變導致數據由原本月均一兩千件陡增至數萬件，屬統計定義改變，非完全由 AI 犯罪暴增所致。</li>
+            </ul>
+        </div>
+
+        <!-- 研究聚焦與發散策略 -->
+        <div class="card">
+            <h2>🔍 三維度研究策略（文獻與資料收斂）</h2>
+            <div class="warning-box">
+                <strong>資料獲取與聚焦建議：</strong><br>
+                建議縮小主題至「金融犯罪」與「AI 深偽/釣魚詐欺」，並嘗試與 165/警政單位洽談學術合作以調閱去識別化個案（Microdata）。
+            </div>
+            <ul>
+                <li><strong>關鍵字 (Keywords)：</strong> 建立詐騙型態、深偽（Deepfake）、語音複製與 AI 犯罪詞彙庫。</li>
+                <li><strong>文獻範疇 (Literature)：</strong> 參考國內外犯罪學（Criminology）與歐盟 AI 法案架構。</li>
+                <li><strong>研究方法 (Methodology)：</strong> 釐清 AI 在案件中屬於「主導者」或「自動化工具」，並分析被害人年齡與縣市分佈。</li>
+            </ul>
+        </div>
+
+        <!-- 近期工作待辦清單 -->
+        <div class="card card-full">
+            <h2>📋 近期工作待辦清單 (Action Items)</h2>
+            <ol>
+                <li>
+                    <strong>評估警政/165 資料合作合作管道：</strong><br>
+                    整理所需欄位清單（如單筆案件金額、被害人特徵、手法分類），撰寫企劃書評估與 165 或警政單位學術合作調閱個案資料（by case / by person）之可行性。
+                </li>
+                <li>
+                    <strong>建立 AI 犯罪關鍵字與文獻索引：</strong><br>
+                    使用 AI 工具（Gemini, Grok, NotebookLM）梳理國內外犯罪學與 AI 詐欺之關鍵字資料庫與論文架構。
+                </li>
+                <li>
+                    <strong>處理 113 年 9 月統計斷點資料：</strong><br>
+                    設計資料清理模型，將新舊制（一案多被害人 vs. 一被害人一案）之數據進行標準化銜接或分段對照。
+                </li>
+                <li>
+                    <strong>對接人口與區域次級資料：</strong><br>
+                    將詐欺數據與縣市人口特徵、年齡層交叉比對，找出易受 AI 詐欺影響之高風險族群。
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 淡江大學 經濟學系 - 林裕芳 研究專案紀錄</p>
+    </footer>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>張德裕 博士論文研究架構與工作報告</title>
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #2563eb;
+            --accent-color: #d97706;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            margin-bottom: 24px;
+        }
+
+        header h1 {
+            margin: 0 0 8px 0;
+            font-size: 26px;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .card-full {
+            grid-column: 1 / -1;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 18px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .formula-box {
+            background-color: #f1f5f9;
+            border-left: 4px solid var(--secondary-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 15px;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .highlight-box {
+            background-color: #fffbeb;
+            border-left: 4px solid var(--accent-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            background-color: #dbeafe;
+            color: var(--primary-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f8fafc;
+            color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>張德裕 博士論文研究專案會報</h1>
+        <p>論文主題：納入 AI 要素之生產函數建構、中間財價值推導與 ABM 模擬 | 進度追蹤儀表板</p>
+    </header>
+
+    <div class="grid">
+        <!-- 核心研究動機與衝擊 -->
+        <div class="card">
+            <h2>📌 核心問題意識 (Motivation)</h2>
+            <p>傳統總體生產函數以勞動與資本為主：</p>
+            <div class="formula-box">Y = A · f(K, L)</div>
+            <p><strong>AI 的本質變革：</strong></p>
+            <ul>
+                <li>超越傳統工具資本 ($K$) 的限制。</li>
+                <li>具備自主性、組織化與生產能力，可直接提供服務並部分替代人類勞動力 ($L$)。</li>
+                <li>市場缺乏通用的「AI 價值指標與投入公式」，源於各企業治理獨立性與不確定性。</li>
+            </ul>
+        </div>
+
+        <!-- 理論模型擴充 -->
+        <div class="card">
+            <h2>⚙️ 模型構想與中間財理論</h2>
+            <p>將 AI 獨立設為要素，擴充為：</p>
+            <div class="formula-box">Y = f(L, K, AI)</div>
+            <p><strong>AI 的雙重維度劃分：</strong></p>
+            <ul>
+                <li><strong>存量 (Asset Stock)：</strong> 企業自建私有化模型與資產。</li>
+                <li><strong>流量服務 (Service Flow)：</strong> 依 Token/算力/API 付費租用。</li>
+            </ul>
+            <p><strong>中間財 (Intermediate Goods) 引入：</strong></p>
+            <p>透過授權與營運成本求得最適解，計算企業投入 AI 後產出利潤的能力。</p>
+        </div>
+
+        <!-- 指導教授關鍵建議 (拜碼頭) -->
+        <div class="card card-full">
+            <h2>💡 指導教授關鍵反饋與學術定位</h2>
+            <div class="highlight-box">
+                <strong>⚠️ 重大策略修訂（切勿「重新發明總體經濟學」）：</strong><br>
+                目前提出的「AI 作為技術/資本累積並驅動經濟成長」的概念，在傳統總體經濟學的 <strong>內生成長模型 (Endogenous Growth Theory)</strong>（如 Solow、Romer、Barro & Sala-i-Martin）中已有深厚的守門理論。必須先回到總體文獻進行對接與致敬（「拜碼頭」）。
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>論文章節</th>
+                        <th>傳統作法與問題</th>
+                        <th>教授建議之修正策略</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>第一章 (上半部)</strong></td>
+                        <td>直接提出自創的總體模型概念</td>
+                        <td>對接經典<strong>內生成長模型</strong>與<strong>中間財理論</strong>作為理論根基 (Grounding)。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>第一章 (下半部)</strong></td>
+                        <td>概念較為分散與手稿化</td>
+                        <td>提出本研究修正後的 AI 變數與算式，轉化為 <strong>Agent-Based Modeling (ABM)</strong> 模擬框架。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 實證與模擬方法 (ABM) -->
+        <div class="card">
+            <h2>🔬 實證方法：Agent-Based Modeling</h2>
+            <ul>
+                <li><strong>中間體模擬 (ABM)：</strong> 假設市場中存在「導入 AI」與「未導入 AI」的異質性企業。</li>
+                <li><strong>市場演化探討：</strong> 模擬 AI 對企業生產力、市場競爭演化及最低成本甜點區 (Cost Minimization) 的影響。</li>
+                <li><strong>政策延伸應用：</strong> 可做為未來評估「機器人稅 (Robot Tax)」與社會福利變化的理論計算工具。</li>
+                <li><strong>實務案例對照：</strong> 美國國防部 (DoD) 與 OpenAI、Anthropic、Google 採購合約。</li>
+            </ul>
+        </div>
+
+        <!-- 待辦事項 Task Force -->
+        <div class="card">
+            <h2>📋 近期工作待辦清單 (Action Items)</h2>
+            <ol>
+                <li>
+                    <strong>梳理總體文獻（預計 1~2 天）：</strong><br>
+                    翻閱總體經濟學，對接內生成長模型 (Endogenous Growth) 與中間財理論。
+                </li>
+                <li>
+                    <strong>修訂第一章草稿（現約 26 頁）：</strong><br>
+                    將手稿概念進行學術語意精修，並補強第一章上半部的文獻定位。
+                </li>
+                <li>
+                    <strong>剔除與修正過時變數：</strong><br>
+                    重新敲定 ABM 基礎框架所需的變數與邏輯模型。
+                </li>
+                <li>
+                    <strong>成果寄送：</strong><br>
+                    整合完整初稿寄送給指導教授審閱。
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 淡江大學 經濟學系 - 張德裕 博士論文研究專案紀錄</p>
+    </footer>
+</div>
+
+</body>
+</html>

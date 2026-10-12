@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>淡江大學經濟學系 - 學術研討總目錄 (2026/10/12)</title>
+    <title>淡江大學經濟學系 - 學術研討總目錄 (動態日期導覽)</title>
     <style>
         :root {
             --primary-color: #0f172a;
@@ -52,18 +52,46 @@
             font-size: 15px;
         }
 
-        .date-node {
-            display: inline-flex;
+        /* 日期選單控制區 */
+        .selector-box {
+            background-color: var(--card-bg);
+            border: 2px solid var(--accent-color);
+            padding: 20px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 28px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            flex-wrap: wrap;
+        }
+
+        .selector-label {
+            font-weight: bold;
+            font-size: 16px;
+            color: var(--primary-color);
+            display: flex;
             align-items: center;
             gap: 8px;
-            background-color: #e2e8f0;
-            color: #0f172a;
-            padding: 8px 16px;
-            border-radius: 20px;
+        }
+
+        .date-select {
+            padding: 10px 16px;
+            font-size: 15px;
             font-weight: bold;
-            font-size: 14px;
-            margin-bottom: 24px;
+            color: var(--primary-color);
+            background-color: #f1f5f9;
             border: 1px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .date-select:hover, .date-select:focus {
+            border-color: var(--accent-color);
+            background-color: #ffffff;
         }
 
         .grid {
@@ -160,59 +188,75 @@
         <p>博碩士生個人研究主題、理論架構與待辦事項專案報告</p>
     </header>
 
-    <!-- 日期節點標籤 -->
-    <div class="date-node">
-        📅 會議研討日期：2026 年 10 月 12 日 (20261012)
+    <!-- 下拉選單控制區 -->
+    <div class="selector-box">
+        <div class="selector-label">
+            📅 請選擇研討會日期（每週一）：
+        </div>
+        <select id="meetingDateSelect" class="date-select" onchange="updateLinks()">
+            <option value="20261012">2026 / 10 / 12 (一)</option>
+            <option value="20261019">2026 / 10 / 19 (一)</option>
+            <option value="20261026">2026 / 10 / 26 (一)</option>
+            <option value="20261102">2026 / 11 / 02 (一)</option>
+            <option value="20261109">2026 / 11 / 09 (一)</option>
+            <option value="20261116">2026 / 11 / 16 (一)</option>
+            <option value="20261123">2026 / 11 / 23 (一)</option>
+            <option value="20261130">2026 / 11 / 30 (一)</option>
+            <option value="20261207">2026 / 12 / 07 (一)</option>
+            <option value="20261214">2026 / 12 / 14 (一)</option>
+            <option value="20261221">2026 / 12 / 21 (一)</option>
+            <option value="20261228">2026 / 12 / 28 (一)</option>
+        </select>
     </div>
 
     <!-- 成員報告連結卡片組 -->
     <div class="grid">
         <!-- 張德裕 -->
-        <a href="20261012/張德裕.html" class="member-card">
+        <a id="link-zhang" href="20261012/張德裕.html" class="member-card">
             <div>
                 <span class="card-tag tag-zhang">博士生報告</span>
                 <h2>張德裕</h2>
                 <p><strong>主題：</strong>納入 AI 要素之生產函數建構、中間財價值推導與 ABM 模擬</p>
             </div>
-            <div class="btn-link">查看專案 HTML ➔</div>
+            <div class="btn-link">查看報告 HTML ➔</div>
         </a>
 
         <!-- 柯美妃 -->
-        <a href="20261012/柯美妃.html" class="member-card">
+        <a id="link-ko" href="20261012/柯美妃.html" class="member-card">
             <div>
                 <span class="card-tag tag-ko">博士生報告</span>
                 <h2>柯美妃</h2>
                 <p><strong>主題：</strong>ABM 於生成式 AI 市場定價、私有化資訊與法律經濟學之應用</p>
             </div>
-            <div class="btn-link">查看專案 HTML ➔</div>
+            <div class="btn-link">查看報告 HTML ➔</div>
         </a>
 
         <!-- 陳柏光 -->
-        <a href="20261012/陳柏光.html" class="member-card">
+        <a id="link-chen" href="20261012/陳柏光.html" class="member-card">
             <div>
                 <span class="card-tag tag-chen">碩士生報告</span>
                 <h2>陳柏光</h2>
                 <p><strong>主題：</strong>大專畢業生就業資料庫整合與 Stanford AI 金絲雀文獻研析</p>
             </div>
-            <div class="btn-link">查看專案 HTML ➔</div>
+            <div class="btn-link">查看報告 HTML ➔</div>
         </a>
 
         <!-- 林裕芳 -->
-        <a href="20261012/林裕芳.html" class="member-card">
+        <a id="link-lin" href="20261012/林裕芳.html" class="member-card">
             <div>
                 <span class="card-tag tag-lin">碩士生報告</span>
                 <h2>林裕芳</h2>
                 <p><strong>主題：</strong>生成式 AI 對台灣詐欺與犯罪趨勢影響及警政資料清理</p>
             </div>
-            <div class="btn-link">查看專案 HTML ➔</div>
+            <div class="btn-link">查看報告 HTML ➔</div>
         </a>
     </div>
 
-    <!-- 檔案結構提示 -->
+    <!-- 動態目錄結構提示 -->
     <div class="folder-structure">
-        <strong>📂 建議檔案與資料夾路徑配置：</strong>
-<pre>
-index.html (本檔案)
+        <strong>📂 當前選擇的資料夾路徑結構：</strong>
+<pre id="path-preview">
+index.html
 └── 20261012/
     ├── 張德裕.html
     ├── 柯美妃.html
@@ -222,9 +266,30 @@ index.html (本檔案)
     </div>
 
     <footer>
-        <p>© 2026 淡江大學 經濟學系 - 研討會紀錄總覽</p>
+        <p>© 2026 淡江大學 經濟學系 - 研討會紀錄總覽系統</p>
     </footer>
 </div>
+
+<script>
+    function updateLinks() {
+        const selectedDate = document.getElementById('meetingDateSelect').value;
+        
+        // 更新四個卡片連結
+        document.getElementById('link-zhang').href = `${selectedDate}/張德裕.html`;
+        document.getElementById('link-ko').href = `${selectedDate}/柯美妃.html`;
+        document.getElementById('link-chen').href = `${selectedDate}/陳柏光.html`;
+        document.getElementById('link-lin').href = `${selectedDate}/林裕芳.html`;
+        
+        // 更新底部資料夾結構預覽
+        document.getElementById('path-preview').textContent = 
+`index.html
+└── ${selectedDate}/
+    ├── 張德裕.html
+    ├── 柯美妃.html
+    ├── 陳柏光.html
+    └── 林裕芳.html`;
+    }
+</script>
 
 </body>
 </html>

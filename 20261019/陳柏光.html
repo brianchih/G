@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳柏光 研討會紀錄與論文資料分析專案</title>
+    <style>
+        :root {
+            --primary-color: #0f766e;
+            --secondary-color: #14b8a6;
+            --accent-color: #0284c7;
+            --warning-color: #d97706;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            margin-bottom: 24px;
+        }
+
+        header h1 {
+            margin: 0 0 8px 0;
+            font-size: 26px;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .card-full {
+            grid-column: 1 / -1;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 18px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .highlight-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .warning-box {
+            background-color: #fffbeb;
+            border-left: 4px solid var(--warning-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #ccfbf1;
+            color: var(--primary-color);
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 13px;
+            margin-right: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f8fafc;
+            color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .btn-back:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="../index.html" class="btn-back">⬅ 回學術研討總目錄 (index.html)</a>
+
+    <header>
+        <h1>陳柏光 研究討論與總體資料分析會報</h1>
+        <p>主題：勞動部大專畢業生就業追蹤總體資料分析、AI 世代求職困境與干擾因子剖析</p>
+    </header>
+
+    <div class="grid">
+        <!-- 勞動部總體資料庫結構與特徵 -->
+        <div class="card card-full">
+            <h2>📊 勞動部總體資料庫（100年 - 113年）整理狀況</h2>
+            <p>目前整理自勞動部網站下載之總體統計資料，資料時間跨度約自民國 100 年至 113 年（2024 年）：</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>數據維度 / 工作表</th>
+                        <th>資料內容與追蹤跨度</th>
+                        <th>資料特性與資料清理注意事項</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>畢業人數與求職歷程</strong></td>
+                        <td>畢業人數、立即就業、1個月內、1~4個月找到工作人數、未尋職人數。</td>
+                        <td>按性別、學門、教育程度（碩士、大學、二專、專科）細分，數字代表「人數」。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>畢業後追蹤機制</strong></td>
+                        <td>每一屆畢業生追蹤 1 年、3 年、5 年至 10 年（如 110 年資料往前追到 100 年畢業生）。</td>
+                        <td>調查範圍逐年擴大，最新資料為追蹤至 113 年第一季（對應前一年 112 畢業生）。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>轉職與薪資狀況</strong></td>
+                        <td>畢業第一年轉職次數、轉職率、勞保申報投保薪資級距平均值。</td>
+                        <td>自 101 年起統計 100 年畢業生之轉職狀況。工作表過度分散，須拆分獨立檔以利統計軟體（Stata/R）讀取。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 論文核心假說與 AI 時代衝擊 -->
+        <div class="card">
+            <h2>💡 論文核心假說：AI 時代下的求職入場券</h2>
+            <div class="highlight-box">
+                <strong>假說困境（AI 替代初階職缺）：</strong><br>
+                2023 年（GPT 爆發）後，基礎性/初階工作大部分已被 AI 替代，中高階員工可直接 command AI 執行，不再需要招募剛畢業的新人，導致青年「求職入場券」大幅縮減。
+            </div>
+            <ul>
+                <li><span class="badge">供給面變化</span> 少子化導致大專畢業總人數逐年下滑，勞動供給自然減少。</li>
+                <li><span class="badge">需求面變化</span> 基礎職缺遭 AI 替代，企業傾向凍結新人招聘。</li>
+            </ul>
+        </div>
+
+        <!-- 總體資料的干擾因素與估計誤差 -->
+        <div class="card">
+            <h2>⚠️ 總體資料的重大干擾因子 (Confounding Factors)</h2>
+            <div class="warning-box">
+                <strong>無法觀察的干擾變數（Unobservables）：</strong><br>
+                僅使用總體 aggregated 資料，無法觀察個體家境，會導致計量估計產生嚴重偏誤（Bias）。
+            </div>
+            <ul>
+                <li><strong>少子化與家境提升：</strong> 現今年輕人多為獨生子女、家境富裕，畢業後未必急於進入職場（延遲求職/啃老/空窗期），未必是「找不到工作」。</li>
+                <li><strong>供需抵消效應：</strong> 少子化（供給減少）若剛好抵消 AI 造成的職缺減少（需求減少），總體數據可能呈現「求職不困難」的假象。</li>
+            </ul>
+        </div>
+
+        <!-- 指導與建議：個體微觀資料的必要性 -->
+        <div class="card card-full">
+            <h2>📋 指導教授研討建議與後續待辦事項 (Action Items)</h2>
+            <ol>
+                <li>
+                    <strong>檔案重構與資料清理：</strong><br>
+                    將勞動部下載的多分頁（Excel Sheets）資料拆分為獨立檔案，建立標準面板資料庫（Panel Data），以利統計軟體讀取。
+                </li>
+                <li>
+                    <strong>嘗試向主管機關申辦「個體微觀資料 (Microdata)」：</strong><br>
+                    總體資料干擾過多且無法觀察家境背景。建議寫信/提出申請向勞動部或相關單位詢問能否取得去識別化之個人微觀資料（包含個體背景變數）。
+                </li>
+                <li>
+                    <strong>評估替換研究題目或調整估計模型：</strong><br>
+                    若無法取得個體微觀資料（Microdata），需重新思考如何利用現有總體資料進行內生性控制，或尋求其他更易對接實證之題目與資料集。
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 淡江大學 經濟學系 - 陳柏光 研究專案紀錄</p>
+    </footer>
+</div>
+
+</body>
+</html>

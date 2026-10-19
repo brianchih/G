@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>林裕芳 論文研究討論與美國 IC3 數據專案</title>
+    <style>
+        :root {
+            --primary-color: #991b1b;
+            --secondary-color: #dc2626;
+            --accent-color: #d97706;
+            --info-color: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            margin-bottom: 24px;
+        }
+
+        header h1 {
+            margin: 0 0 8px 0;
+            font-size: 26px;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .card-full {
+            grid-column: 1 / -1;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 18px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .highlight-box {
+            background-color: #fef2f2;
+            border-left: 4px solid var(--secondary-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .warning-box {
+            background-color: #fffbeb;
+            border-left: 4px solid var(--accent-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #fee2e2;
+            color: var(--primary-color);
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 13px;
+            margin-right: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f8fafc;
+            color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .btn-back:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="../index.html" class="btn-back">⬅ 回學術研討總目錄 (index.html)</a>
+
+    <header>
+        <h1>林裕芳 研究討論與美國 IC3 數據專案會報</h1>
+        <p>主題：美國 FBI/IC3 網路犯罪資料庫清理、AI 深偽/語音詐欺變數與跨國對照</p>
+    </header>
+
+    <div class="grid">
+        <!-- 美國 IC3 資料庫特徵與欄位 -->
+        <div class="card card-full">
+            <h2>📊 美國 IC3 (Internet Crime Complaint Center) 資料庫梳理 (2020-2025)</h2>
+            <p>已下載並清理美國 FBI 旗下 IC3 機構 2020 年至 2025 年官方年度網路犯罪統計數據（PDF 報告與統計數據表）：</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>數據維度</th>
+                        <th>涵蓋欄位與指標內容</th>
+                        <th>資料觀察與趨勢發現</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>AI 犯罪專屬指標</strong></td>
+                        <td>Deepfake 深偽影音、Voice Cloning 語音複製詐欺、AI 投資詐欺金額。</td>
+                        <td><strong>2022 年首次出現 Deepfake 案件爆發點</strong>；2025 年報告已包含完整 AI 犯罪損失比例。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>受害人族群特徵</strong></td>
+                        <td>受害人年齡層分類（高風險族群如 60 歲以上年長者）、損失金額與占比。</td>
+                        <td>美國 60 歲以上受害者在加密貨幣/投資詐欺的損失金額遠高於其他年齡層。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>手法與地緣維度</strong></td>
+                        <td>主要犯罪手法分類、各州被害人數、嫌疑人數據與總財損金額。</td>
+                        <td>資料結構完整度遠高於國內 Open Data，具備對照 AI 爆發前後（2020-2022 vs. 2023-2025）之條件。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 相關文獻與研究設計 -->
+        <div class="card">
+            <h2>💡 相關文獻參照：2015-2024 美國跨州 IC3 研究</h2>
+            <div class="highlight-box">
+                <strong>現有論文研究設計參照：</strong><br>
+                有文獻運用 IC3 2015–2024 各州數據，分析被害人數、損失金額、嫌疑人人數與財損，並結合地緣政治、心理學與社會結構做差異化分析 (Difference-in-Differences)。
+            </div>
+            <ul>
+                <li><span class="badge">時間切點</span> 以 2022/2023 年 AI 技術爆發為分界，比較「無 AI 階段 (2020-2022)」與「有 AI 階段 (2023-2025)」的犯罪模式與成長率差異。</li>
+                <li><span class="badge">跨國對照</span> 拿美國完善的 IC3 總體指標與台灣警政署 165 資料進行結構與手法對照。</li>
+            </ul>
+        </div>
+
+        <!-- 導師建議：微觀資料申請 -->
+        <div class="card">
+            <h2>⚠️ 總體資料限制與去識別化個體資料申請</h2>
+            <div class="warning-box">
+                <strong>指導教授建議：</strong><br>
+                IC3 數據雖完善，但公開版仍屬於「全美/各州彙整統計 (Aggregated Data)」。要精準評估 AI 詐欺對個人特徵的衝擊，需嘗試聯繫國內外收集機構，詢問取得<strong>去識別化個體微觀資料 (De-identified Microdata)</strong> 的機會。
+            </div>
+        </div>
+
+        <!-- 近期工作待辦清單 -->
+        <div class="card card-full">
+            <h2>📋 近期工作待辦清單 (Action Items)</h2>
+            <ol>
+                <li>
+                    <strong>導讀 2025 IC3 相關應用文獻：</strong><br>
+                    於下一次研討會匯報 2015-2024 美國跨州 IC3 資料庫之論文研究方法、計量模型與變數控制。
+                </li>
+                <li>
+                    <strong>建構美國 IC3 面板資料庫 (Panel Data)：</strong><br>
+                    將 2020–2025 年 IC3 報告中的 AI 指標（Deepfake、語音複製、60+ 歲財損）整理為縱向數據集。
+                </li>
+                <li>
+                    <strong>洽詢台美單位去識別化資料管道：</strong><br>
+                    寫信詢問警政署/165 或相關學術機構，評估取得去識別化逐案微觀資料之可行性。
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 淡江大學 經濟學系 - 林裕芳 研究專案紀錄</p>
+    </footer>
+</div>
+
+</body>
+</html>

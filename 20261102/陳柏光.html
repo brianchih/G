@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳柏光 研究討論與資料分析專案會報</title>
+    <style>
+        :root {
+            --primary-color: #0f766e;
+            --secondary-color: #14b8a6;
+            --accent-color: #0284c7;
+            --warning-color: #d97706;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            margin-bottom: 24px;
+        }
+
+        header h1 {
+            margin: 0 0 8px 0;
+            font-size: 26px;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .card-full {
+            grid-column: 1 / -1;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 18px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .highlight-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .warning-box {
+            background-color: #fffbeb;
+            border-left: 4px solid var(--warning-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #ccfbf1;
+            color: var(--primary-color);
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 13px;
+            margin-right: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f8fafc;
+            color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .btn-back:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="../index.html" class="btn-back">⬅ 回學術研討總目錄 (index.html)</a>
+
+    <header>
+        <h1>陳柏光 研究討論與專案會報 (2026/11/02 當週)</h1>
+        <p>主題：高等教育修業年限改革之薪資衝擊對齊、勞動部微觀資料申請與求職假說校正</p>
+    </header>
+
+    <div class="grid">
+        <!-- 本週研討與跨領域文獻借鏡 -->
+        <div class="card card-full">
+            <h2>📚 本週重點進度：修業年限與人力資本對比研究</h2>
+            <div class="highlight-box">
+                <strong>對接哥倫比亞安第斯大學自然實驗（Carolina Arteaga, 2017）經驗：</strong><br>
+                本週針對張德裕學長分享之哥倫比亞大學課程修業年限縮短（4.5 年降至 4 年）對畢業生初期薪資顯著下降 12%~16% 之實證研究進行討論。此文獻展示了如何使用去識別化行政資料庫進行 DID 雙重差分估計，為柏光克服目前資料庫限制提供了計量設計上的啟發[cite: 1, 2, 7, 23, 24]。
+            </div>
+            <ul>
+                <li><span class="badge">資料瓶頸對齊</span> 目前勞動部公開資料因缺乏個體變數（如家境、學習表現），致使「AI 取代初階職缺」與「少子化/家境富裕致延遲求職」雙重效果混淆，需引進個體微觀控制項。</li>
+                <li><span class="badge">申請進度</span> 持續追蹤與申請勞動部「勞動市場微觀資料庫」去識別化數據（Microdata），或轉向淡江校內校友追蹤問卷數據。</li>
+            </ul>
+        </div>
+
+        <!-- 論文核心假說與計量難處 -->
+        <div class="card">
+            <h2>💡 論文核心假說：AI 世代下的「入場券」干擾控制</h2>
+            <div class="warning-box">
+                <strong>未觀察變數干擾（Unobservables）：</strong><br>
+                若無法取得個體微觀資料，僅憑總體人數下滑無法釐清究竟是 AI 縮減了初階職缺，亦或是少子化與延遲就業導致的供給面下降。
+            </div>
+            <ul>
+                <li><strong>AI 替代效應：</strong> 中高階人力以生成式 AI 替代初階畢業生職缺。</li>
+                <li><strong>供給端抵消：</strong> 少子化與獨生子女延遲求職形成總體人數掩蓋效應。</li>
+            </ul>
+        </div>
+
+        <!-- 替代策略與對策 -->
+        <div class="card">
+            <h2>⚙️ 資料清理與替代實證架構</h2>
+            <ul>
+                <li><span class="badge">檔案獨立化</span> 將勞動部多分頁 Excel 資料拆解為獨立檔案，建構面板資料庫 (Panel Data)。</li>
+                <li><span class="badge">對照組設計</span> 參考 Arteaga (2017) 做法，建立不同學門或 AI 暴露度 (AI Exposure) 差異之對照群組[cite: 2, 10]。</li>
+            </ul>
+        </div>
+
+        <!-- 近期工作待辦清單 -->
+        <div class="card card-full">
+            <h2>📋 近期工作待辦清單 (Action Items)</h2>
+            <ol>
+                <li>
+                    <strong>追蹤勞動部微觀資料庫回覆：</strong><br>
+                    確認是否能取得去識別化之個人層級投保與畢業追蹤數據。
+                </li>
+                <li>
+                    <strong>建構學門別 AI 暴露度面板資料：</strong><br>
+                    先行完成現有總體資料之多變數拆分與指標設定，準備進行標準化迴歸。
+                </li>
+                <li>
+                    <strong>校正實證假說：</strong><br>
+                    依據文獻導讀結果，將「修業年限/教育投入」與「AI 暴露度」共同納入青年薪資與就業成長之分析架構中。
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 淡江大學 經濟學系 - 陳柏光 研究專案紀錄</p>
+    </footer>
+</div>
+
+</body>
+</html>

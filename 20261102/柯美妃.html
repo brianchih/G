@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>柯美妃 論文研究討論與 ABM 定價賽局專案</title>
+    <style>
+        :root {
+            --primary-color: #4338ca;
+            --secondary-color: #6366f1;
+            --accent-color: #059669;
+            --warning-color: #d97706;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            margin-bottom: 24px;
+        }
+
+        header h1 {
+            margin: 0 0 8px 0;
+            font-size: 26px;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .card-full {
+            grid-column: 1 / -1;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 18px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .highlight-box {
+            background-color: #ecfdf5;
+            border-left: 4px solid var(--accent-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .warning-box {
+            background-color: #fffbeb;
+            border-left: 4px solid var(--warning-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #e0e7ff;
+            color: var(--primary-color);
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 13px;
+            margin-right: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f8fafc;
+            color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .btn-back:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="../index.html" class="btn-back">⬅ 回學術研討總目錄 (index.html)</a>
+
+    <header>
+        <h1>柯美妃 研究討論與專案會報 (2026/11/02 當週)</h1>
+        <p>主題：ABM 寡占定價賽局（Q-Learning 默契勾結）、AI 零邊際成本模型調校與博士論文三篇架構深化</p>
+    </header>
+
+    <div class="grid">
+        <!-- 本週重點研討與對接進展 -->
+        <div class="card card-full">
+            <h2>📚 本週重點進度：ABM 定價賽局與 Q-Learning 默契勾結理論深化</h2>
+            <div class="highlight-box">
+                <strong>對接 Calvano et al. (2020, AER) 與價格黏性理論：</strong><br>
+                本週持續深化 2020 AER 論文中關於強化學習代理人（Q-Learning Agent）在無直接溝通下自動形成高於 Bertrand 競爭均衡之「默契勾結 (Tacit Collusion)」演化機制。重點將模型推導應用於生成式 AI 產業之階層定價（Tiered Pricing）。
+            </div>
+            <ul>
+                <li><span class="badge">產業特性調校</span> 針對傳統 Hall & Hitch (1939) 與 Stigler (1947) 針對實體製造業之成本加成定價，修正為適合 AI 產業之<strong>高固定算力投入、趨近於零之邊際成本 (MC ≈ 0) 與長期規模經濟遞減特質</strong>。</li>
+                <li><span class="badge">差別取價 (Price Discrimination)</span> 在 ABM 代理人決策中導入免費版 (Freemium)、$20/月基本款及 API 算力高階方案之動態劃分。</li>
+            </ul>
+        </div>
+
+        <!-- 博士論文三篇主軸架構 -->
+        <div class="card card-full">
+            <h2>🎯 博士論文三篇核心架構深化 (Three-Paper Dissertation)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>篇章別</th>
+                        <th>研究主題 (Topic)</th>
+                        <th>本週模型進展與參數機制</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="badge">第一篇</span><strong>市場定價</strong></td>
+                        <td>生成式 AI 寡占市場定價與賽局演化模型</td>
+                        <td>以 Q-Learning 為 Agent 學習核心，設定折扣因子 &Delta;、學習率 &alpha; 與探索衰減率 &beta;，觀察多廠商下默契勾結價格之穩定度。</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge">第二篇</span><strong>企業資訊</strong></td>
+                        <td>企業私有化 AI (Private AI) 與資訊不對稱</td>
+                        <td>模擬敏感機構（如醫療、金融、學術）建置私有牆 (Data Wall) 對市場整體資訊流動與資源配置效率之衝擊。</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge">第三篇</span><strong>法規治理</strong></td>
+                        <td>AI 時代下的法律經濟學 (Law & Economics)</td>
+                        <td>探討智慧財產權與邊界規範對 AI 代理人賽局演化之內生約束。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 導師建議與注意事項 -->
+        <div class="card">
+            <h2>💡 導師建議與參數設定提醒</h2>
+            <div class="warning-box">
+                <strong>規模經濟與邊際成本設定：</strong><br>
+                在 ABM 模擬中需嚴格區分「邊際成本遞減」與「製造業實體買斷」之差異。AI 服務具備極高固定研發與電力成本，但發行編輯成本趨近於零，價格剛性多來自消費者對 AI 產品能力之資訊不對稱。
+            </div>
+        </div>
+
+        <!-- 近期工作待辦清單 -->
+        <div class="card card-full">
+            <h2>📋 近期工作待辦清單 (Action Items)</h2>
+            <ol>
+                <li>
+                    <strong>完成第一篇 ABM 演算法 Python/NetLogo 程式碼：</strong><br>
+                    撰寫 Q-Learning Agent 在 MC ≈ 0 規模經濟條件下對弈之模擬環境，測試 2 廠商至 4 廠商之動態均衡。
+                </li>
+                <li>
+                    <strong>建立階層定價與轉換成本參數矩陣：</strong><br>
+                    寫入消費者產品轉換成本 (Switching Costs) 與黏性需求函數。
+                </li>
+                <li>
+                    <strong>對接 2026/11 導讀論文之變數範疇：</strong><br>
+                    準備將第 1 篇論文草稿初稿整合成系統化章節架構，向指導教授匯報。
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 淡江大學 經濟學系 - 柯美妃 博士論文研究專案紀錄</p>
+    </footer>
+</div>
+
+</body>
+</html>

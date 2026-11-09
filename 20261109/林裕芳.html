@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>林裕芳 研究討論與專案會報 (2026/11/09 當週)</title>
+    <style>
+        :root {
+            --primary-color: #991b1b;
+            --secondary-color: #dc2626;
+            --accent-color: #d97706;
+            --info-color: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            margin-bottom: 24px;
+        }
+
+        header h1 {
+            margin: 0 0 8px 0;
+            font-size: 26px;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .card-full {
+            grid-column: 1 / -1;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 18px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .highlight-box {
+            background-color: #fef2f2;
+            border-left: 4px solid var(--secondary-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .warning-box {
+            background-color: #fffbeb;
+            border-left: 4px solid var(--accent-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .info-box {
+            background-color: #eff6ff;
+            border-left: 4px solid var(--info-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #fee2e2;
+            color: var(--primary-color);
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 13px;
+            margin-right: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f8fafc;
+            color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .btn-back:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="../index.html" class="btn-back">⬅ 回學術研討總目錄 (index.html)</a>
+
+    <header>
+        <h1>林裕芳 研究討論與專案會報 (2026/11/09 當週)</h1>
+        <p>主題：美國 FBI/IC3 2015–2024 文獻深讀、網路犯罪結構轉變與各州 DID 計量設計</p>
+    </header>
+
+    <div class="grid">
+        <!-- 本週重點研討與論文剖析 -->
+        <div class="card card-full">
+            <h2>📚 本週重點進度：美國 FBI 2015–2024 近作論文研析 (2026年6月發表)</h2>
+            <div class="highlight-box">
+                <strong>傳統犯罪 vs. 網路/智慧型犯罪的分水嶺探討：</strong><br>
+                裕芳本週深入研讀 2026 年 6 月最新發表之國際期刊論文（運用 FBI 2015–2024 縱向數據）。該研究以 <strong>2020 年為關鍵轉折點</strong>：2020 年前以實體傳統犯罪為主，2020 年後受疫情與網路普及影響，網路依賴型（Cyber-dependent）與網路輔助型（Cyber-enabled）智慧型犯罪急劇上升，財損金額呈急增趨勢。
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>犯罪分類標籤</th>
+                        <th>犯罪型態與範疇描述</th>
+                        <th>趨勢特徵與數據變化 (2015-2024)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>網路輔助型犯罪<br>(Cyber-enabled)</strong></td>
+                        <td>傳統犯罪透過網路擴大規模，如投資詐欺、網頁詐騙、虛擬貨幣/比特幣詐騙。</td>
+                        <td>2020 至 2021 年起財損規模呈指數級急增，與虛擬貨幣投資熱潮高度相關。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>網路依賴型犯罪<br>(Cyber-dependent)</strong></td>
+                        <td>無網路或電腦即無法發生的犯罪，如勒索軟體 (Ransomware)、DDOS 駭客攻擊等。</td>
+                        <td>案件量與企業財損比重逐年攀升，威脅整體資訊安全與資產結構。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>三維度犯罪動機</strong></td>
+                        <td>劃分為「社會經濟 (Socioeconomic)」、「心理社會 (Psychosocial)」與「地緣政治 (Geopolitical)」。</td>
+                        <td>探討各州治安、經濟水準與地緣法規對不同犯罪動機之誘因差異。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 導師關鍵建議與計量設計 (DID) -->
+        <div class="card card-full">
+            <h2>💡 指導教授關鍵反饋：美國各州法規差異與 DID 計量實驗設計</h2>
+            <div class="info-box">
+                <strong>善用各州 (State-level) 微觀資料進行 Natural Experiment：</strong><br>
+                裕芳已確認可取得美國各州（State-level）細緻資料。教授指出美國各州對於網路犯罪、個資保護與金融監管的法規寬嚴不一，這提供極佳的<strong>自然實驗 (Natural Experiment) 環境</strong>。
+            </div>
+            <ul>
+                <li><span class="badge">雙重差分法 (DID)</span> 建議依據各州法規頒佈時間或嚴格程度分類，採用雙重差分法（Difference-in-Differences, DID）評估不同法規對防範網路/AI 詐欺之因果效應。</li>
+                <li><span class="badge">時間跨度拉長</span> 為避免單看 2020–2025（僅包含 AI 年代）導致時間序列過短，應保留 2015–2024 完整資料，觀察無 AI (2015-2021) 與有 AI (2022-2025) 的結構性變化。</li>
+            </ul>
+        </div>
+
+        <!-- 研討提醒：審視數據與防範 AI 幻覺 -->
+        <div class="card card-full">
+            <h2>⚠️ 研討注意事項：數據真實性與避免 AI 幻覺 (AI Hallucination)</h2>
+            <div class="warning-box">
+                <strong>嚴格落實數據與圖形比對：</strong><br>
+                針對論文中部分圖表（如每 100K 人口比率、成長趨勢圖）呈現邏輯較為曖昧或不可直觀解釋之現象，教授特別提醒：與 AI 互動生成圖表摘要時，<strong>務必回歸原始數據集 (Raw Data) 進行驗證</strong>，切勿直接盲從 AI 生成的繪圖或敘述，防範 AI 幻覺（Hallucination）影響計量真實性。
+            </div>
+        </div>
+
+        <!-- 近期工作待辦清單 -->
+        <div class="card card-full">
+            <h2>📋 近期工作待辦清單 (Action Items)</h2>
+            <ol>
+                <li>
+                    <strong>建立美國各州 (State-level) 面板資料庫：</strong><br>
+                    整理 2015–2024/2025 年各州網路犯罪案件數、受害者人數、財損金額與犯罪類型標籤。
+                </li>
+                <li>
+                    <strong>梳理美國各州網路犯罪法規差異：</strong><br>
+                    蒐集主要各州對於網路詐欺與 AI 刑事處罰之法規上路時間點，為 DID 模型劃分實驗組與對照組。
+                </li>
+                <li>
+                    <strong>數據實務驗證：</strong><br>
+                    針對論文圖表進行數據驗算（Replication），確保變數定義（如受害者損失、嫌疑犯損失）與統計模型完全吻合。
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 淡江大學 經濟學系 - 林裕芳 研究專案紀錄</p>
+    </footer>
+</div>
+
+</body>
+</html>

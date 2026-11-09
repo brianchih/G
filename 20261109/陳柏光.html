@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳柏光 研究討論與專案會報 (2026/11/09 當週)</title>
+    <style>
+        :root {
+            --primary-color: #0f766e;
+            --secondary-color: #14b8a6;
+            --accent-color: #0284c7;
+            --warning-color: #d97706;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            margin-bottom: 24px;
+        }
+
+        header h1 {
+            margin: 0 0 8px 0;
+            font-size: 26px;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .card-full {
+            grid-column: 1 / -1;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 18px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .highlight-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .warning-box {
+            background-color: #fffbeb;
+            border-left: 4px solid var(--warning-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .info-box {
+            background-color: #eff6ff;
+            border-left: 4px solid var(--accent-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #ccfbf1;
+            color: var(--primary-color);
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 13px;
+            margin-right: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f8fafc;
+            color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .btn-back:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="../index.html" class="btn-back">⬅ 回學術研討總目錄 (index.html)</a>
+
+    <header>
+        <h1>陳柏光 研究討論與專案會報 (2026/11/09 當週)</h1>
+        <p>主題：勞動部個體資料微觀申訴策略、DID 雙重差分法計量設計與文獻檢索 Agentic AI 工具鏈</p>
+    </header>
+
+    <div class="grid">
+        <!-- 勞動部資料申訴與民意信箱回應 -->
+        <div class="card card-full">
+            <h2>📬 勞動部民意信箱回覆解析與申訴策略 (Data Privacy & Persuasion)</h2>
+            <div class="highlight-box">
+                <strong>官方拒絕原因與對應論述：</strong><br>
+                勞動部回覆表示，雖然內部已有去識別化個體資料，但擔心學者利用限制欄位（如淡江大學、經濟系、特定年齡與畢業年分）進行<strong>交叉比對（Cross-referencing）</strong>還原出特定個人個資，故偏向僅提供公開彙整數據。
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>維度與議題</th>
+                        <th>勞動部考量與疑慮</th>
+                        <th>研討會對應説服策略 (Academic Commitments)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>個資交叉比對風險</strong></td>
+                        <td>擔心學校、學門、畢業年份等小樣本變數交叉組合後比對出極少數個體。</td>
+                        <td>正式回信承諾：研究僅做總體或組別加總迴歸，<strong>絕對不進行個別身份比對</strong>，比對個資對學術研究毫無價值。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>成果反哺與雙贏</strong></td>
+                        <td>機關多一事不如少一事，缺乏提供微觀資料之誘因。</td>
+                        <td>說明本研究若成果產出，可<strong>提供一份完整分析報告回饋勞動部</strong>，協助其優化大專畢業生政策規劃。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>學術保密切結書</strong></td>
+                        <td>對外界外洩或媒體揭露責任之隱憂。</td>
+                        <td>表明願簽署嚴格之「學術研究資料安全與保密切結書」，確保個體微觀數據絕不外洩。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 彙整資料清理與計量模型設計 (DID) -->
+        <div class="card card-full">
+            <h2>📊 現有大專畢業生資料庫清理與 DID 模型構想</h2>
+            <div class="info-box">
+                <strong>大專畢業生追蹤調查（畢業 1 年至 5 年、最高至 9 年）現況：</strong><br>
+                目前公開最新數據包含 112 學年（及 113/114 最新更新檔）。資料涵蓋就業人數、投保率、起薪與平均薪資。
+            </div>
+            <ul>
+                <li><span class="badge">平減指數校正</span> 教授指示需利用「消費者物價指數 (CPI)」將名目薪資進行平減，計算出真實的<strong>實質薪資 (Real Wages) 成長曲線</strong>。</li>
+                <li><span class="badge">資訊/AI 相關學門對照</span> 針對資料庫中的「資訊類/工程類」與其他文法商學門進行跨時間比較。</li>
+                <li><span class="badge">雙重差分法 (DID)</span> 借鏡張德裕學長報告之 Arteaga (2017) 論文，以 <strong>2021/2022 年生成式 AI 爆發為斷點</strong>，比較 AI 高暴露度學門與低暴露度學門在斷點前後的薪資與投保率差異。</li>
+            </ul>
+        </div>
+
+        <!-- 文獻檢索工具鏈：以 AI 為「半個老闆」 -->
+        <div class="card card-full">
+            <h2>🤖 文獻檢索實務與 AI 工具鏈調教 (Anti-gravity / Agentic AI)</h2>
+            <div class="warning-box">
+                <strong>慣老闆 Prompt 策略與互動心法：</strong><br>
+                若檢索結果過於寬泛或無關，應發揮「慣老闆」精神與 AI 反覆互動、抱怨並修正關鍵字組合，而非直接放棄。
+            </div>
+            <ul>
+                <li><span class="badge">工具建議 (Anti-gravity)</span> 可利用 NotebookLM / Agentic AI 工具，下達學術檢索指令，連結 Google Scholar 等學術網路自動抓取相關期刊，並自動建置本地資料庫與文獻引用來源。</li>
+                <li><span class="badge">關鍵字優化</span> 將搜尋目標設定為「AI Automation, Entry-level Wage Impact, Labor Market Substitution, Higher Education Reform」。</li>
+            </ul>
+        </div>
+
+        <!-- 近期工作待辦清單 -->
+        <div class="card card-full">
+            <h2>📋 近期工作待辦清單 (Action Items)</h2>
+            <ol>
+                <li>
+                    <strong>回覆勞動部民意信箱：</strong><br>
+                    撰寫表達願簽署保密切結書並反哺研究報告之說明信，爭取去識別化個案微觀資料。
+                </li>
+                <li>
+                    <strong>完成 CPI 實質薪資與投保率面板資料清理：</strong><br>
+                    將現有 112/113 年大專畢業生各學門數據匯入 Stata/Python，計算物價平減後之實質薪資。
+                </li>
+                <li>
+                    <strong>跑出初步 DID 雙重差分迴歸結果：</strong><br>
+                    以 2021 年為斷點，劃分資訊類與非資訊類學門，觀察 AI 爆發前後起薪與投保率之結構性變化。
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 淡江大學 經濟學系 - 陳柏光 研究專案紀錄</p>
+    </footer>
+</div>
+
+</body>
+</html>

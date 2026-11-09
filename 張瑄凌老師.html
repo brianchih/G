@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>教學創新示範：ChatGPT 與 HTML 互動式教材設計與評量反思</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --secondary: #0f766e;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #334155;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 30px 40px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      opacity: 0.9;
+      font-size: 1rem;
+    }
+
+    .badge-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .sidebar {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      height: fit-content;
+      box-shadow: var(--shadow);
+    }
+
+    .sidebar h3 {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary-light);
+      padding-bottom: 8px;
+    }
+
+    .nav-list {
+      list-style: none;
+    }
+
+    .nav-item {
+      padding: 10px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 6px;
+      transition: all 0.2s ease;
+      font-size: 0.95rem;
+    }
+
+    .nav-item:hover {
+      background-color: #eff6ff;
+      color: var(--primary-light);
+    }
+
+    .nav-item.active {
+      background-color: var(--primary-light);
+      color: white;
+      font-weight: 600;
+    }
+
+    .main-content {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 30px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .section h2 {
+      color: var(--primary);
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card {
+      background: #f8fafc;
+      border-left: 4px solid var(--primary-light);
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 20px;
+    }
+
+    .card h4 {
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    th {
+      background-color: #f1f5f9;
+      color: var(--primary);
+    }
+
+    ul, ol {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .highlight-box {
+      background-color: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 15px;
+      border-radius: 4px;
+      margin: 15px 0;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      padding: 20px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>教學創新實踐：生成式 AI 與 HTML 互動式教材之應用與翻轉教學反思</h1>
+    <p>淡江大學教學實踐研究與 AI 輔助課程實戰經驗分享</p>
+    <div class="badge-group">
+      <span class="badge">財務管理／金融科技應用</span>
+      <span class="badge">ChatGPT HTML 模組</span>
+      <span class="badge">AI 語音與對口人像</span>
+      <span class="badge">教學實踐研究計畫</span>
+    </div>
+  </header>
+
+  <div class="grid">
+    <!-- 側邊導航 -->
+    <div class="sidebar">
+      <h3>簡報章節目錄</h3>
+      <ul class="nav-list">
+        <li class="nav-item active" onclick="showSection('sec1')">1. 創新背景與概念動機</li>
+        <li class="nav-item" onclick="showSection('sec2')">2. 離線 HTML 互動教材製作</li>
+        <li class="nav-item" onclick="showSection('sec3')">3. AI 語音與對口人像整合</li>
+        <li class="nav-item" onclick="showSection('sec4')">4. 生活化應用延伸 (轉盤/天氣)</li>
+        <li class="nav-item" onclick="showSection('sec5')">5. 師生互動與評量反思</li>
+        <li class="nav-item" onclick="showSection('sec6')">6. 專家改良建議 (改進企劃)</li>
+      </ul>
+    </div>
+
+    <!-- 主要內容區 -->
+    <div class="main-content">
+
+      <!-- 1. 創新背景與概念動機 -->
+      <div id="sec1" class="section active">
+        <h2>1. 創新背景與概念動機</h2>
+        <div class="card">
+          <h4>教學痛點：傳統講授式教學與複雜計算的距離</h4>
+          <p>在《財務管理》等必修課程中，概念往往極為抽象且包含大量計算（如債券定價、存續期間、利率與債券價格敏感度關係）。學生若僅憑紙本 PPT 或靜態算式，難以建立直觀感受。</p>
+        </div>
+        <h3>核心解決思維</h3>
+        <ul>
+          <li><strong>離線式 HTML 互動模組：</strong> 將原本散亂的 PPT 頁面提煉，利用 ChatGPT 快速生成可互動的單頁網頁（HTML/JS），直接上傳至 iClass 即可在無需連線或架站情況下開啟操作。</li>
+          <li><strong>視覺化動態感官體驗：</strong> 透過數值輸入、滑桿動態調整與動態曲線變化，讓學生直觀看見「當利率由 3% 變動至 20% 時，長短期債券價格變化的敏感度差異」。</li>
+          <li><strong>學習掌控權交還學生：</strong> 增加「動畫播放速度控制器（1x, 2x, 0.5x）」，配合現代學生習慣倍速觀看影音的習慣，提高自主學習意願。</li>
+        </ul>
+      </div>
+
+      <!-- 2. 離線 HTML 互動教材製作 -->
+      <div id="sec2" class="section">
+        <h2>2. 離線 HTML 互動教材製作流程</h2>
+        <p>無須具備高深前端程式設計能力，透過給予 Prompt（提示詞）即可將簡報轉化為互動工具：</p>
+        <ol>
+          <li><strong>精簡素材與確立核心：</strong> 不盲目上傳整份投影片，僅抽取「最具爭議／最複雜」的核心頁面（如債券價格對利率敏感度）。</li>
+          <li><strong>ChatGPT 協助提煉結構：</strong> 丟入簡報內容，請 AI 建議「應保留哪些參數（如到期年數 1-30 年、市場要求報酬率、票面利率）」並定義視覺化變數。</li>
+          <li><strong>迭代優化互動細節：</strong>
+            <ul>
+              <li>更正座標軸意義（防止學生混淆 X/Y 軸意義）。</li>
+              <li>新增學生自訂參數欄位與比對模式（Case 1 vs. Case 2）。</li>
+              <li>加入變速播放控制（允許學生加速或慢速播放點位移動）。</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+
+      <!-- 3. AI 語音與對口人像整合 -->
+      <div id="sec3" class="section">
+        <h2>3. AI 語音與對口人像工具整合與比較</h2>
+        <p>為強化多感官學習，將重點整理結合 AI 語音與對口人像，減輕教師重覆錄製課後補充影片的負擔。</p>
+        <table>
+          <thead>
+            <tr>
+              <th>技術類型 / 工具</th>
+              <th>優勢 (Pros)</th>
+              <th>限制 (Cons)</th>
+              <th>適合應用場景</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Web Speech API</strong><br><span class="tag">ChatGPT 原生嵌入</span></td>
+              <td>免額外費用、能隨學生輸入參數動態改變講稿內容與朗讀。</td>
+              <td>語音較為機械音、無法呈現對嘴嘴型。</td>
+              <td>課堂互動頁面實時動態導覽、數值變動解說。</td>
+            </tr>
+            <tr>
+              <td><strong>Vision Story</strong><br><span class="tag">AI 對口虛擬人像</span></td>
+              <td>擬真度高、可對嘴型、增添視覺吸引力。</td>
+              <td>需付費（按 Token/時長計費）、產生影片需上傳整合。</td>
+              <td>章節開頭簡介、極短核心觀念總結（15-30秒）。</td>
+            </tr>
+            <tr>
+              <td><strong>TTSMaker</strong><br><span class="tag">免費文字轉語音</span></td>
+              <td>免費、支援多國語言（台港口音、英/日/法/西語）。</td>
+              <td>需手動下載 MP3/MP4 後再封裝至 HTML 檔案中。</td>
+              <td>外籍生多語言旁白支援、課後重點摘要說明。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 4. 生活化應用延伸 -->
+      <div id="sec4" class="section">
+        <h2>4. 生活化 HTML 應用與部署推廣</h2>
+        <p>將 AI 生成 HTML 互動設計延伸至學生生活與創意情境，建立學生對 AI 工具應用的想像力：</p>
+        <div class="card">
+          <h4>專案 A：午餐吃什麼決策轉盤 (Food Spinner)</h4>
+          <p>結合 Google 評論與餐廳分類，可手動新增口袋名單，運用手機開啟 HTML 進行隨機抽籤，解決校園日常痛點。</p>
+        </div>
+        <div class="card">
+          <h4>專案 B：動態天氣瓶與氣候模擬 (Weather Bottle)</h4>
+          <p>串接線上氣象 API API 數據，隨著城市溫度變化動態繪製瓶內植物與雨雪狀態。</p>
+        </div>
+        <div class="card">
+          <h4>專案 C：情境藉口研究所 (Excuse Generator)</h4>
+          <p>提供「量子力學風格、社畜文學風格、專業官腔風格」等多重情境藉口生成，增加互動趣味性。</p>
+        </div>
+        <div class="highlight-box">
+          <strong>部署技巧：</strong> 利用 <strong>Netlify</strong> 免費平台上傳 HTML 檔，生成公開網址並轉為 QR Code，即可在課堂中讓學生掃碼連線互動。
+        </div>
+      </div>
+
+      <!-- 5. 師生互動與評量反思 -->
+      <div id="sec5" class="section">
+        <h2>5. 教學實踐、師生互動與評量機制反思</h2>
+        <h3>教學現場觀察</h3>
+        <ul>
+          <li><strong>學生學習動機：</strong> 互動式工具與語音元件顯著提升了學生的專注度與探索意願（配合除錯加分機制效果更佳）。</li>
+          <li><strong>過度依賴 AI 報告的副作用：</strong> 開放 AI 後，學生簡報產出品質看似提升，但口頭報告時常「照本宣科」，無法回答深層延伸問題。</li>
+        </ul>
+        <h3>評量機制的轉變與回歸</h3>
+        <div class="highlight-box">
+          <strong>評量設計策略：</strong> 平時學習全面開放並鼓勵使用 AI 工具；期中／期末考則回歸傳統「閉卷筆試」或「評析 AI 錯誤答案」。
+        </div>
+        <ul>
+          <li><strong>平時：</strong> 給予無標準解答題目，鼓勵學生透過 ChatGPT 與 HTML 工具摸索。</li>
+          <li><strong>評量：</strong> 出題「AI 產出的錯誤解答」，請學生找出其邏輯瑕疵或錯誤假設（測驗真正的理解深度）。</li>
+          <li><strong>教學實踐研究計畫：</strong> 利用計畫經費核銷 AI 訂閱費用（ChatGPT Plus, 語音工具），並以期中考前後學習成效做對照組與實驗組分析。</li>
+        </ul>
+      </div>
+
+      <!-- 6. 專家改良建議 -->
+      <div id="sec6" class="section">
+        <h2>6. 專家改良建議與教學升級行動計畫</h2>
+        <p>針對本次示範內容，建議從以下 5 大維度進行升級優化：</p>
+        <ol>
+          <li><strong>建構專屬教學 Prompt 範本庫：</strong> 建立標準化的 Prompt 語法範本（如指定 HTML5 + Tailwind CSS + Chart.js），讓生成的互動元件視覺更專業、程式碼更穩健。</li>
+          <li><strong>強化引導式問答（Scaffolding）：</strong> 在 HTML 工具中加入「學習單檢核機制」（例如：當學生把利率調到 15% 時，網頁跳出思考題「此時債券價格呈現何種變化？請勾選」），避免學生只當成遊戲滑過。</li>
+          <li><strong>簡化語音/影片整合工作流：</strong> 優先採用 Web Speech API（直接用 JS 發音）或預先匯入開放 TTS API，減少手動下載/剪輯 MP4 的耗時過程。</li>
+          <li><strong>將 AI 除錯納入正式評量項目：</strong> 如同行名師建議，將「抓出 AI 算錯／語意瑕疵」設為學習單主要題型，將學生從「AI 內容接收者」提升為「AI 內容審查者」。</li>
+          <li><strong>規劃完整教學實踐研究計畫數據收集：</strong> 建議在互動 HTML 頁面中加入埋點（如計數器記錄學生操作次數/停留時間），作為實證教學研究計畫（MOE Teaching Practice Research Program）的數據量化指標。</li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>淡江大學教學創新成果展示 | 本網頁由教學示範逐字稿自動重構與優化生成</p>
+  </footer>
+</div>
+
+<script>
+  function showSection(sectionId) {
+    // 隱藏所有 section
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(sec => sec.classList.remove('active'));
+
+    // 取消所有 nav-item 的 active
+    const navItems = document.querySelectorAll('.nav-item');
+    navItems.forEach(item => item.classList.remove('active'));
+
+    // 顯示目標 section
+    document.getElementById(sectionId).classList.add('active');
+
+    // 啟用對應 nav-item
+    event.currentTarget.classList.add('active');
+  }
+</script>
+
+</body>
+</html>

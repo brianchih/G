@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 國科會計畫：277 戶全追蹤樣本分析與方法論檢討報告 (2026/11/12)</title>
+  <style>
+    :root {
+      --primary-color: #1a365d;
+      --secondary-color: #2b6cb0;
+      --accent-color: #319795;
+      --warning-color: #dd6b20;
+      --bg-color: #f7fafc;
+      --card-bg: #ffffff;
+      --text-color: #2d3748;
+      --border-color: #e2e8f0;
+      --highlight-bg: #ebf8ff;
+      --warn-bg: #fffaf0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+      line-height: 1.65;
+    }
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 1.8rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    header h1 { margin: 0 0 0.5rem 0; font-size: 1.65rem; }
+    header p { margin: 0; font-size: 0.95rem; opacity: 0.88; }
+    
+    /* 頁籤導覽列 */
+    .nav-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #edf2f7;
+      border-bottom: 2px solid var(--border-color);
+      padding: 0 2rem;
+    }
+    .tab-button {
+      padding: 1rem 1.4rem;
+      border: none;
+      background: none;
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: #718096;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-bottom: 3px solid transparent;
+    }
+    .tab-button:hover { color: var(--secondary-color); }
+    .tab-button.active {
+      color: var(--secondary-color);
+      border-bottom: 3px solid var(--secondary-color);
+      background-color: var(--card-bg);
+    }
+    
+    .content-container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+    .tab-content {
+      display: none;
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 2.2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--border-color);
+    }
+    .tab-content.active { display: block; }
+
+    h2 {
+      color: var(--primary-color);
+      border-bottom: 2px solid #edf2f7;
+      padding-bottom: 0.6rem;
+      margin-top: 0;
+      font-size: 1.38rem;
+    }
+    h3 { color: var(--secondary-color); margin-top: 1.6rem; font-size: 1.12rem; }
+    
+    .highlight-box {
+      background-color: var(--highlight-bg);
+      border-left: 4px solid var(--secondary-color);
+      padding: 1rem 1.2rem;
+      margin: 1.4rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .warning-box {
+      background-color: var(--warn-bg);
+      border-left: 4px solid var(--warning-color);
+      padding: 1rem 1.2rem;
+      margin: 1.4rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.4rem 0;
+      font-size: 0.92rem;
+    }
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 0.65rem 0.9rem;
+      text-align: left;
+    }
+    th { background-color: #f7fafc; color: var(--primary-color); font-weight: 600; }
+    tr:nth-child(even) { background-color: #fcfcfc; }
+
+    .badge {
+      display: inline-block;
+      padding: 0.15rem 0.55rem;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    .badge-info { background-color: #bee3f8; color: #2a4365; }
+    .badge-warn { background-color: #feebc8; color: #744210; }
+    .badge-ok { background-color: #c6f6d5; color: #22543d; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>2026 國科會研究計畫：277 戶無斷點全追蹤樣本分析與討論總彙整</h1>
+    <p>會議日期：2026 年 11 月 12 日 ｜ 資料來源：《台灣家庭動態資料庫》(PSFD) 1999–2024 貫時性面板</p>
+  </header>
+
+  <div class="nav-tabs">
+    <button class="tab-button active" onclick="switchTab('tab1')">一、277 戶親代實證特徵與生命軌跡</button>
+    <button class="tab-button" onclick="switchTab('tab2')">二、652 名子代追蹤與跨代對比</button>
+    <button class="tab-button" onclick="switchTab('tab3')">三、數據邏輯矛盾盤點與編碼除錯</button>
+    <button class="tab-button" onclick="switchTab('tab4')">四、資料庫架構擴充、文獻與下一步</button>
+  </div>
+
+  <div class="content-container">
+
+    <!-- 分頁一：277 戶親代實證特徵與生命軌跡 -->
+    <div id="tab1" class="tab-content active">
+      <h2>277 戶完整無斷點追蹤樣本 (RI1999–2024) 實證觀察</h2>
+      
+      <div class="highlight-box">
+        <strong>樣本母體輪廓：</strong> 從 1999 年首批主樣本（<code>RI1999</code>）一路無斷點追蹤至 2024 年，共篩選出 <strong>277 戶</strong>完整貫時性家庭（受訪者於 2024 年年齡分布為 <strong>61 至 71 歲</strong>，均已進入退休與阿公阿嬤階段）。
+      </div>
+
+      <h3>1. 家庭結構與生育數量特徵</h3>
+      <ul>
+        <li><strong>戶型變遷趨勢</strong>：與家庭收支調查（FiES）全國趨勢一致——「核心家庭」隨子女長大離家而持續縮小，「空巢期夫妻二人戶」與「單人戶」顯著放大，「三代同堂」則維持穩定比例。</li>
+        <li><strong>實際生育子女數（共 650–652 名子女）</strong>：
+          <ul>
+            <li>1 個小孩：36 戶</li>
+            <li>2 個小孩：<strong>133 戶</strong>（佔比最高）</li>
+            <li>3 個小孩：87 戶</li>
+            <li>4 個以上小孩：21 戶（註：總計 36+133+87+21 = 277 戶）</li>
+          </ul>
+        </li>
+        <li><strong>子女性別組合與胎次</strong>：僅有兒子 66 戶、僅有女兒 44 戶、兒女雙全 167 戶；第一胎男性 233 人、女性 211 人；第二胎以上男性 102 人、女性 108 人，整體男女比接近 1:1。</li>
+      </ul>
+
+      <h3>2. 教育程度、同質婚與退休經濟</h3>
+      <ul>
+        <li><strong>教育程度分布</strong>：國中以下 98 戶、高中職 73 戶、專科大學 78 戶、研究所以上 28 戶。</li>
+        <li><strong>教育同質婚（Assortative Mating）</strong>：配偶學歷高度匹配，國中配國中 59 戶、高中職配高中職 44 戶、專科大學互配 27 戶、研究所互配 11 戶。</li>
+        <li><strong>退休所得與子女奉養金</strong>：2024 年受訪者幾乎全數退休，平均月所得落於 <strong>4 萬至 6 萬元</strong>（含退休金與子女奉養）。子女每月奉養金中位數隨物價與年資由 2007 年約 5,000 元逐步上升至 2018 年 8,000 多元；2020–2022 年受 COVID-19 疫情衝擊曾下滑，2024 年回升至約 6,000 元。</li>
+        <li><strong>房屋所有權與租金</strong>：絕大多數為本人或配偶自有產權（僅約 28 戶租屋，租金中位數多落於 7,500–15,000 元間，屬因工作調動等不得已之過渡租屋）。</li>
+      </ul>
+
+      <h3>3. 主觀快樂感與健康狀況的「U 型與錯位現象」</h3>
+      <ul>
+        <li><strong>快樂指數呈現「低 $\rightarrow$ 高 $\rightarrow$ 低」</strong>：早年為事業與育兒打拼時「非常快樂」比例低；2006 年前後（中年穩定、子女漸長）達到快樂高峰；晚年（60 歲以上）快樂比例下降且出現「非常不快樂」群體。</li>
+        <li><strong>健康與快樂的背離</strong>：問卷顯示受訪者晚年自評健康狀況依然偏高（無明顯衰退），顯示晚年不快樂的主因並非生理健康惡化，而是與<strong>子女變遷、空巢適應或家庭互動</strong>有關。</li>
+      </ul>
+    </div>
+
+    <!-- 分頁二：652 名子代追蹤與跨代對比 -->
+    <div id="tab2" class="tab-content">
+      <h2>652 名子代追蹤樣本 (C / RCI) 生命歷程分析</h2>
+
+      <div class="highlight-box">
+        <strong>子代樣本輪廓：</strong> 277 戶親代共生育約 <strong>652 名子女</strong>（多為 1980 年代出生，至 2024 年平均年齡約 <strong>37 歲</strong>）。透過 <code>C</code> 與 <code>RCI</code>（滿 25 歲或結婚離家轉為成人追蹤樣本）觀察其離家與成家軌跡。
+      </div>
+
+      <h3>1. 子代家庭型態轉移軌跡</h3>
+      <ul>
+        <li><strong>早期階段</strong>：約有 <strong>80%</strong> 為未婚並與父母同住。</li>
+        <li><strong>獨立與單身化</strong>：隨著年齡增長，單身獨立居住比例快速攀升，於 2018 年達到高峰。</li>
+        <li><strong>頂客化趨勢</strong>：成家後「夫妻無子女戶」佔比持續擴大，至 2020 年後在已成家子代中佔比<strong>超過 50%</strong>。</li>
+      </ul>
+
+      <h3>2. 教育紅利遞減與初婚年齡</h3>
+      <ul>
+        <li><strong>學歷與薪資對比</strong>：在 1980 年代出生的子代（有效追蹤約 520 人）中，面臨高等教育普及與科技產業轉型，數據顯示單純大專/大學學歷者的平均薪資表現反而較為吃力。</li>
+        <li><strong>初婚年齡分布</strong>：子代結婚高峰集中於 <strong>26 歲前後</strong>；女性多集中於 26 歲以前完婚，男性婚期則可延伸至 37 歲左右。</li>
+      </ul>
+    </div>
+
+    <!-- 分頁三：數據邏輯矛盾盤點與編碼除錯 -->
+    <div id="tab3" class="tab-content">
+      <h2>今日發現之「邏輯矛盾點」與編碼除錯清單</h2>
+
+      <div class="warning-box">
+        <strong>重要方法論提醒：</strong> 跨年度合併（1999–2024）時，因問卷題號位移、跳答規則或單位變更，AI 自動抓取時產生數項邏輯矛盾，需優先釐清再進行後續統計。
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>異常項目</th>
+            <th>觀察到的矛盾現象</th>
+            <th>研判原因與除錯方向</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1. 早期「夫妻二人戶」與「全數有子女」矛盾</strong></td>
+            <td>277 戶加總均有 1 至 4 名以上子女（無 0 子女戶），但早期年份卻出現「夫妻二人戶」分類。</td>
+            <td>檢查早期子女是否由祖父母代為照顧（未同住），或早期分類定義將未同住子女排除。</td>
+          </tr>
+          <tr>
+            <td><strong>2. 子代已婚人數過低 vs. 親代多孫矛盾</strong></td>
+            <td>600 多名子代中僅抓出 47 人已婚，但親代問卷卻顯示擁有為數眾多的孫子女。</td>
+            <td>子代滿 25 歲或結婚離家後會轉入 <code>RCI</code> 獨立問卷，若未完整串接 <code>RCI</code> 婚姻變數會導致低估。</td>
+          </tr>
+          <tr>
+            <td><strong>3. 2003、2012、2020 年資料斷層（黑洞）</strong></td>
+            <td>2003 年多項變數（如夫妻雙方月收入、產權）出現明顯跳躍或空白；2012 與 2020 年部分欄位全空。</td>
+            <td>檢視該年度問卷是否未施測該題組，或 <code>x02</code>/<code>x03</code> 跨波次欄位對齊錯誤。</td>
+          </tr>
+          <tr>
+            <td><strong>4. 2004 與 2016 年快樂指數驟降</strong></td>
+            <td>快樂指數在 2004 與 2016 年出現非典型垂直掉落，2022 年則受疫情影響下滑。</td>
+            <td>核對 2004 與 2016 年問卷之快樂量表<strong>選項尺度（Likert Scale）</strong>是否曾進行改版或反向計分。</td>
+          </tr>
+          <tr>
+            <td><strong>5. 房屋產權與夫妻收入劇烈跳動</strong></td>
+            <td>2000–2002 年間產權在「本人、父母、子女」間劇烈來回跳動；夫妻收入出現單年異常歸零。</td>
+            <td>確認跨年度題號位移（如金額單位由「元」改為「萬元」），以及受訪者本人與配偶欄位是否對調。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 分頁四：資料庫架構擴充、文獻與下一步 -->
+    <div id="tab4" class="tab-content">
+      <h2>資料庫全貌拼圖、參考文獻與下一步行動</h2>
+
+      <h3>1. PSFD 資料庫全樣本拼圖架構（累積 17,000+ 獨立受訪者）</h3>
+      <p>團隊已將 43 個原始檔轉為 CSV，並建構出包含 73,000 多筆觀察值、超過 17,000 名獨立受訪者的長寬面板（<code>PSFD_Panel_Long</code> / <code>Wide</code>）。未來需將不同世代拼圖整合：</p>
+      <ul>
+        <li><strong><code>RI</code>（新抽初訪樣本）</strong>：包含 <code>RI1999</code>（1954–1964 年生）、<code>RI2000</code>（較年長世代，相當於 1999 樣本之父母輩）、<code>RI2003</code>、<code>RI2009</code> 及 <code>RI2016</code>。</li>
+        <li><strong><code>RR</code>（成人主樣本追蹤）</strong>：歷年持續併入所有先前抽出的 <code>RI</code> 世代，最新追蹤已達 <strong>2024 年</strong>。</li>
+        <li><strong><code>C</code> / <code>RCI</code>（子女追蹤樣本）</strong>：子女滿 25 歲或結婚離家後轉入 <code>RCI</code>，問卷結構與 <code>RR</code> 對齊（追蹤至 2018–2024 年）。</li>
+        <li><strong>跨資料庫補充</strong>：博光將協助檢視《台灣社會變遷基本調查》（TSCS）之「家庭組」歷年資料（1984–2021），補足價值觀變遷趨勢。</li>
+      </ul>
+
+      <h3>2. 相關最新實證文獻彙整（助教群組提供）</h3>
+      <ul>
+        <li><strong>許碧峰（2024）</strong>：探討台灣不同社經身份及福祉成長差距的實證研究（使用 2007–2020 PSFD）。</li>
+        <li><strong>黃秋文（2012）</strong>：台灣已婚家庭與先生父母同住之居住安排變化（使用 1999–2006 PSFD）。</li>
+        <li><strong>2026 最新研究</strong>：探討社經地位與幸福感之關係（運用 2020、2022、2024 PSFD 最新波次）。</li>
+        <li><strong>陳彥仲等學者</strong>：台灣青年與父母的世代同住安排與孝道觀念的角色（使用 1999–2007 PSFD）。</li>
+      </ul>
+
+      <h3>3. 下一步工作規劃 (Next Steps)</h3>
+      <ol>
+        <li><strong>排除邏輯矛盾與變數校準</strong>：優先修正 277 戶親代與 652 名子代在「已婚人數、產權跳動、2003/2012/2020 缺漏值及單位轉換」上的變數對齊問題。</li>
+        <li><strong>固定背景變數補值</strong>：針對跨波次未重複詢問之固定人口屬性（如性別、出生年、最高學歷），依最早或最完整填答波次進行合理向前/向後補齊（Imputation）。</li>
+        <li><strong>多世代標準化佔比呈現</strong>：納入 <code>RI2000</code>、<code>RI2003</code>、<code>RI2009</code>、<code>RI2016</code> 等後續新抽世代後，依「年齡區段」與「標準化百分比」呈現跨世代家庭結構與價值觀演變，作為 ABM 代理人模型之校準基準。</li>
+      </ol>
+    </div>
+
+  </div>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-button').forEach(el => el.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳柏光 研究討論與專案會報 (2026/11/16 當週)</title>
+    <style>
+        :root {
+            --primary-color: #0f766e;
+            --secondary-color: #14b8a6;
+            --accent-color: #0284c7;
+            --warning-color: #d97706;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            margin-bottom: 24px;
+        }
+
+        header h1 {
+            margin: 0 0 8px 0;
+            font-size: 26px;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .card-full {
+            grid-column: 1 / -1;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 18px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .formula-box {
+            background-color: #f1f5f9;
+            border-left: 4px solid var(--accent-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-family: "Georgia", "Cambria", "Courier New", serif;
+            font-size: 16px;
+            font-style: italic;
+            color: #0f172a;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .highlight-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .warning-box {
+            background-color: #fffbeb;
+            border-left: 4px solid var(--warning-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .info-box {
+            background-color: #eff6ff;
+            border-left: 4px solid var(--accent-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #ccfbf1;
+            color: var(--primary-color);
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 13px;
+            margin-right: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f8fafc;
+            color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .btn-back:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="../index.html" class="btn-back">⬅ 回學術研討總目錄 (index.html)</a>
+
+    <header>
+        <h1>陳柏光 研究討論與專案會報 (2026/11/16 當週)</h1>
+        <p>主題：大專畢業生追蹤資料分析（就業率與勞退/所得稅薪資）、少子化分母效應與學門市場價值估算</p>
+    </header>
+
+    <div class="grid">
+        <!-- 本週核心發現：就業率穩定背后的「人數萎縮」 -->
+        <div class="card card-full">
+            <h2>📊 本週重點進度：大專畢業生就業率趨勢與少子化「分母效應」解析</h2>
+            <div class="highlight-box">
+                <strong>表面就業率穩定（約 83% ~ 91%）背後的市場警訊：</strong><br>
+                柏光本週整理民國 100 年至 113/114 年大專畢業生追蹤資料，發現畢業第 1 年就職率穩定在 <strong>83% ~ 85%</strong>，畢業 3 至 5 年後趨於穩定在 <strong>90% ~ 91%</strong>。但指導教授指出：<strong>比率未降是因為總畢業人數（分母）每年減少約 1 至 2 萬人，實際就業人數（分子）仍在萎縮</strong>。
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>觀察指標與維度</th>
+                        <th>實證數據表現</th>
+                        <th>經濟學與市場解讀</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>總體就職率軌跡</strong></td>
+                        <td>剛畢業（1年）約 83.3% ~ 84.9%；畢業 3~5 年後穩定在 90% 左右。</td>
+                        <td>比率看似未受 AI 衝擊，實為<strong>少子化導致分母（總畢業人數）同步縮減</strong>所產生的掩蓋效應。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>資訊類學門細分表現</strong></td>
+                        <td>「軟體開發」就業率微升，但「資料庫與網路設計」呈下滑趨勢。</td>
+                        <td>需進一步檢視絕對就業人數（分子），釐清基層資料庫與網路維運是否已遭 AI 工具替代。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>起薪與薪資追趕速度</strong></td>
+                        <td>100 年至 114 年畢業初薪從約 30,000 元升至 44,000 元；資訊技術與資訊通訊學門漲幅最顯著。</td>
+                        <td>晚畢業學弟妹的起薪追趕資深前輩（5萬元門檻）的速度加快；<strong>需核查 44,000 元高薪數據是否混入碩博士樣本</strong>，並以 CPI 平減。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 導師關鍵建議：學門市場總價值估算 -->
+        <div class="card card-full">
+            <h2>💡 指導教授關鍵反饋：計算各學門的「市場總支出價值」</h2>
+            <div class="info-box">
+                <strong>突破「職業別缺乏人數」之限制，改以「學門別」計算市場支付總額：</strong><br>
+                因公開資料中「畢業後工作職業分類」缺乏對應人數，但「大學畢業學門分類」同時具備<strong>畢業就職人數</strong>與<strong>畢業一年後平均月薪</strong>，教授指示可直接計算產業對各學門願意支付的總薪資支出：
+            </div>
+            <div class="formula-box">
+                學門市場總價值 (Market Value<sub>i,t</sub>) = 學門畢業就職人數 (N<sub>i,t</sub>) &times; 畢業一年後實質平均月薪 (Real Wage<sub>i,t</sub>)
+            </div>
+            <ul>
+                <li><span class="badge">研究意義</span> 透過跨年度比較不同學門（如資訊技術、軟體開發 vs. 傳統文法商）的市場總價值變化，能精準衡量 AI 時代下產業對特定人力資本的真實需求與資源重分配。</li>
+            </ul>
+        </div>
+
+        <!-- 資料處理與 AI 協作建議 -->
+        <div class="card card-full">
+            <h2>⚙️ 資料處理注意事項與 AI 工具鏈協作</h2>
+            <div class="warning-box">
+                <strong>避免手動複製貼上（Key-in）錯誤，善用 AI 轉換 CSV 並執行交叉驗算：</strong><br>
+                柏光在手工整理多分頁 Excel 時發現數據錯置（如半年與八年半薪資數列雷同、缺漏值未補）。教授建議<strong>將原始 Excel 轉為結構化 CSV 交由 AI 清理與繪圖</strong>，研究者的核心工作在於「檢查資料邏輯、核對碩博士是否混入學士樣本、以及驗證 AI 產出是否正確」。
+            </div>
+        </div>
+
+        <!-- 近期工作待辦清單 -->
+        <div class="card card-full">
+            <h2>📋 近期工作待辦清單 (Action Items)</h2>
+            <ol>
+                <li>
+                    <strong>核查薪資樣本純度並執行 CPI 物價平減：</strong><br>
+                    確認 110–114 年平均起薪（4.4萬元）是否包含碩博士畢業生，將純學士樣本獨立出來並用消費者物價指數（CPI）換算為實質薪資。
+                </li>
+                <li>
+                    <strong>計算各學門歷年「市場總價值 (人數 × 月薪)」：</strong><br>
+                    針對資訊類（軟體開發、資訊技術、資訊通訊、資料庫網路等）與非資訊類學門，計算各年度就職人數與實質月薪乘積，觀察 AI 前後之結構消長。
+                </li>
+                <li>
+                    <strong>建立自動化 CSV 資料清理流程：</strong><br>
+                    摒棄手動剪貼，將政府公開多維度表格轉換為標準化 CSV 面板資料（Panel Data），並利用 AI 輔助產出多學門對比視覺化圖表。
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 淡江大學 經濟學系 - 陳柏光 研究專案紀錄</p>
+    </footer>
+</div>
+
+</body>
+</html>

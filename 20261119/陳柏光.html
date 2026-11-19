@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>產學合作提案討論紀要：行為財務代理人模擬</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --secondary: #3b82f6;
+      --accent: #0f766e;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      margin: 0;
+      padding: 2rem 1rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    header h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.65rem;
+    }
+    header p {
+      margin: 0;
+      opacity: 0.9;
+      font-size: 0.95rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+    h2 {
+      color: var(--primary);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.5rem;
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+    h3 {
+      color: var(--accent);
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.08rem;
+    }
+    ul, ol {
+      padding-left: 1.25rem;
+    }
+    li {
+      margin-bottom: 0.45rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.75rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background-color: #f1f5f9;
+      color: var(--primary);
+      font-weight: 600;
+    }
+    .tag {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-right: 0.25rem;
+    }
+    .highlight-box {
+      background-color: #f0fdf4;
+      border-left: 4px solid #16a34a;
+      padding: 1rem 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+    }
+    .cite-box {
+      background-color: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-left: 4px solid var(--secondary);
+      padding: 0.9rem 1.2rem;
+      border-radius: 6px;
+      margin: 1rem 0;
+      font-size: 0.93rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>產學合作提案討論紀要：行為財務代理人模擬</h1>
+      <p>合作單位：永豐（企業端） ｜ 核心方法：代理人基模擬（ABM）與處分效應（Disposition Effect）重現</p>
+    </header>
+
+    <!-- 一、提案背景與研究方向 -->
+    <section class="card">
+      <h2>一、 提案背景與研究方向</h2>
+      <ul>
+        <li><strong>主題脈絡：</strong>企業端（永豐）提出三大產學主題，本組選定「行為財務學（Behavioral Finance）」方向，並從其列舉的子題中決定聚焦於<strong>「行為重現」</strong>。</li>
+        <li><strong>核心研究現象：</strong>以重現投資人的<strong>「處分效應」（Disposition Effect）</strong>（即過早賣出獲利股票、過久持有虧損股票之非理性行為）為首要目標；若後續時間與精力允許，再擴充納入其他行為財務偏誤。</li>
+        <li><strong>模型設計規格：</strong>
+          <ul>
+            <li>透過代理人基模擬（Agent-Based Modeling, ABM）建構異質性投資人模型，讓模擬出的統計特徵貼近真實市場的非理性行為表現。</li>
+            <li>依企業端設定標準，需設計至少 <strong>5 類投資人特質</strong>，且每類包含 <strong>3 至 5 項參數條件</strong>。</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 二、資料需求與替代方案評估 -->
+    <section class="card">
+      <h2>二、 資料獲取管道與替代方案評估</h2>
+      <p>由於設定異質性代理人參數無法憑空想像，團隊與指導老師針對三種資料來源進行了可行性評估：</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 24%;">資料來源</th>
+            <th style="width: 38%;">現況與限制</th>
+            <th style="width: 38%;">可行性與應對策略</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1. 合作企業（永豐）</strong><br><span class="tag">首選微觀資料</span></td>
+            <td>下週將與企業端進行深度訪談，但先前說明會中企業表示需向主管呈報討論，釋出內部客戶資料的機率不高。</td>
+            <td>訪談時仍積極爭取<strong>「去識別化」之客戶下單與買賣進出明細</strong>，作為校準代理人行為參數的第一手依據。</td>
+          </tr>
+          <tr>
+            <td><strong>2. 證交所／公開統計資料</strong><br><span class="tag">巨觀總體資料</span></td>
+            <td>團隊已實際檢視公開網站資料，發現多為<strong>總體（Aggregate）成交金額統計</strong>，缺乏個人層級（Micro-level）的交易紀錄。</td>
+            <td>無法直接用來設定個別代理人的異質性參數，僅能作為後續市場整體模擬結果的驗證參考。</td>
+          </tr>
+          <tr>
+            <td><strong>3. 經典學術文獻</strong><br><span class="tag">備案參數來源</span></td>
+            <td>若企業端最終確定無法提供去識別化下單資料，則需轉向實證文獻尋找參數設定依據。</td>
+            <td>參考 <strong>Odean (1999)</strong>（及相關處分效應經典文獻），從實證結果中萃取不同投資族群的交易特徵與偏誤參數。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="cite-box">
+        <strong>關鍵參考文獻補充（Odean, 1999）：</strong><br>
+        Terrance Odean 40歲攻讀博士並於學術界發表多篇行為財務學奠基之作。其 1999 年發表於頂級期刊 <em>American Economic Review</em> 的經典論文 <em>"Do Investors Trade Too Much?"</em>（及 1998 年處分效應研究），利用美國大型折扣券商之個人帳戶真實交易紀錄，實證檢驗投資人的過度自信、頻繁交易與處分效應等行為偏誤，可作為本組設定代理人特徵與偏誤參數的重要理論與實證依據。
+      </div>
+    </section>
+
+    <!-- 三、下週訪談與後續行動清單 -->
+    <section class="card">
+      <h2>三、 下週訪談與後續行動清單</h2>
+      <div class="highlight-box">
+        <ol>
+          <li><strong>企業深度訪談準備（下週）：</strong>向永豐窗口確認是否能提供<strong>去識別化個人買賣進出資料</strong>，並進一步釐清其對「5 類投資人特質（各 3–5 項標準）」的業務定義與期望。</li>
+          <li><strong>文獻參數萃取（同步備案）：</strong>研讀 <strong>Odean (1999)</strong> 等行為財務學實證文獻，整理高資產或一般散戶之交易頻率、持有期間、獲利了結與停損門檻等關鍵指標，作為代理人參數設定（Calibration）的備用方案。</li>
+          <li><strong>代理人架構設計：</strong>結合企業端給定的分類標準與文獻特徵，著手規劃 5 類異質性投資人的決策規則與參數範圍。</li>
+        </ol>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

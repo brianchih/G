@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳柏光 論文研究討論與專案會報 (2026/11/23 當週)</title>
+    <style>
+        :root {
+            --primary-color: #0f766e;
+            --secondary-color: #14b8a6;
+            --accent-color: #0284c7;
+            --warning-color: #d97706;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            margin-bottom: 24px;
+        }
+
+        header h1 {
+            margin: 0 0 8px 0;
+            font-size: 26px;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .card-full {
+            grid-column: 1 / -1;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 18px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .formula-box {
+            background-color: #f1f5f9;
+            border-left: 4px solid var(--accent-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-family: "Georgia", "Cambria", "Courier New", serif;
+            font-size: 16px;
+            font-style: italic;
+            color: #0f172a;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .highlight-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .warning-box {
+            background-color: #fffbeb;
+            border-left: 4px solid var(--warning-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .info-box {
+            background-color: #eff6ff;
+            border-left: 4px solid var(--accent-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #ccfbf1;
+            color: var(--primary-color);
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 13px;
+            margin-right: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f8fafc;
+            color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .btn-back:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="../index.html" class="btn-back">⬅ 回學術研討總目錄 (index.html)</a>
+
+    <header>
+        <h1>陳柏光 研究討論與專案會報 (2026/11/23 當週)</h1>
+        <p>主題：純學士樣本分離、CPI 實質工資平減結果、最低工資干擾剝離與論文第 1–3 章推進</p>
+    </header>
+
+    <div class="grid">
+        <!-- 本週重點進度：樣本純化與 CPI 實質工資平減 -->
+        <div class="card card-full">
+            <h2>📊 本週重點進度：純學士樣本分離與 CPI 實質工資平減</h2>
+            <div class="highlight-box">
+                <strong>解決上週起薪異常偏高問題，還原民國 100–114 年純學士真實薪資軌跡：</strong><br>
+                上週因將「專科、學士與碩博士」混算，導致畢業起薪高達 4 萬多接近 5 萬元（碩博士起薪普遍達 5.5 萬至 6.5 萬元以上）。柏光本週重新擷取勞動部勞保／勞退資料庫中獨立分列的<strong>「純學士」樣本（佔總體約 70%–80%）</strong>，並依上週指導教授指示完成 <strong>CPI 消費者物價指數平減</strong>。
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>檢核與分析項目</th>
+                        <th>本週實證發現</th>
+                        <th>數據判讀與研究意涵</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>純學士樣本起薪校正</strong></td>
+                        <td>剔除碩博士樣本後，純學士起薪回歸至約 <strong>NT$ 36,000</strong> 的合理區間。</td>
+                        <td>確認資料庫依教育程度（專科、學士、碩士、博士）嚴格切分，後續可直接引用官方分類定義。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>名目 vs. 實質工資趨勢<br>(100–114 年 7 月調查)</strong></td>
+                        <td>名目薪資近年爬升較快，但扣除通膨換算為<strong>實質工資</strong>後，漲幅明顯趨緩。</td>
+                        <td>分別檢視「畢業當年 7 月」與「畢業隔年 7 月」實質工資，呈現穩健微幅上升而非暴漲。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>學門出口 vs. 產業入口對照</strong></td>
+                        <td>資料庫具備各大學科系（出口端）起薪，但行業別（入口端）未單獨切出「AI 工程師」。</td>
+                        <td>可將「高 AI 暴露科系起薪漲幅」與「資訊科技產業別整體薪資增減」進行交叉類比佐證。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 計量識別關鍵：剝離最低工資調漲干擾 -->
+        <div class="card">
+            <h2>⚙️ 計量識別：剝離「最低工資調漲」內生干擾</h2>
+            <div class="warning-box">
+                <strong>區隔政策性調薪與 AI 技術溢酬：</strong><br>
+                近年基本工資連續調漲會同步推升新鮮人底層起薪。計量模型必須將「最低工資與通膨因素」控制並剝離，才能精準衡量生成式 AI 普及（近 4 年）為特定學門帶來的額外薪資溢酬（例如額外 5%–10% 漲幅），並對比傳統行政職（薪資停滯、一人兼多職）的結構分化。
+            </div>
+        </div>
+
+        <!-- 文獻補給與寫作時程規劃 -->
+        <div class="card">
+            <h2>📚 文獻座標建立與農曆年前寫作目標</h2>
+            <div class="info-box">
+                <strong>研討回饋與論文推進時程：</strong><br>
+                • <strong>文獻檢索方向：</strong>前往「華藝線上圖書館」及「台灣經濟研究院（台經院）」資料庫，蒐集國內探討「最低工資對薪資結構與物價通膨影響」之最新實證論文作為控制基準。<br>
+                • <strong>里程碑設定：</strong>目前實證數據地圖已具雛形，補齊文獻座標後，目標於<strong>農曆新年前完成論文第 1 至 3 章</strong>（緒論、文獻回顧、研究方法與資料說明）。
+            </div>
+        </div>
+
+        <!-- 近期工作待辦清單 -->
+        <div class="card card-full">
+            <h2>📋 近期工作待辦清單 (Action Items)</h2>
+            <ol>
+                <li>
+                    <strong>蒐集國內最低工資實證文獻：</strong><br>
+                    從華藝資料庫與台經院檢索近年台灣最低工資調漲對初任人員薪資與通膨影響之期刊論文，納入文獻回顧與計量控制依據。
+                </li>
+                <li>
+                    <strong>執行「科系別」與「產業別」交叉比對：</strong><br>
+                    將資訊相關科系畢業生之實質起薪成長曲線，與對應科技／資訊產業別之整體薪資變化進行對照，補強實證一致性證據。
+                </li>
+                <li>
+                    <strong>撰寫論文第 1 至 3 章初稿：</strong><br>
+                    系統整理勞動部資料庫分類口徑（專科、學士、碩博）、CPI 平減公式與學門市場價值估算架構，於農曆年前產出前三章完整文稿。
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 淡江大學 經濟學系 - 陳柏光 研究專案紀錄</p>
+    </footer>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>柯美妃 論文研究討論與專案會報 (2026/11/23 當週)</title>
+    <style>
+        :root {
+            --primary-color: #6d28d9;
+            --secondary-color: #8b5cf6;
+            --accent-color: #d97706;
+            --info-color: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            margin-bottom: 24px;
+        }
+
+        header h1 {
+            margin: 0 0 8px 0;
+            font-size: 26px;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .card-full {
+            grid-column: 1 / -1;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 18px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .formula-box {
+            background-color: #f1f5f9;
+            border-left: 4px solid var(--secondary-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-family: "Georgia", "Cambria", "Courier New", serif;
+            font-size: 16px;
+            font-style: italic;
+            color: #0f172a;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .highlight-box {
+            background-color: #f5f3ff;
+            border-left: 4px solid var(--primary-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .warning-box {
+            background-color: #fffbeb;
+            border-left: 4px solid var(--accent-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .info-box {
+            background-color: #eff6ff;
+            border-left: 4px solid var(--info-color);
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #ede9fe;
+            color: var(--primary-color);
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 13px;
+            margin-right: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f8fafc;
+            color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .btn-back:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="../index.html" class="btn-back">⬅ 回學術研討總目錄 (index.html)</a>
+
+    <header>
+        <h1>柯美妃 論文研究討論與專案會報 (2026/11/23 當週)</h1>
+        <p>主題：本週請假缺席紀錄、前次 AI 算法默契勾結 (Q-Learning ABM) 架構銜接與下週推進重點</p>
+    </header>
+
+    <div class="grid">
+        <!-- 本週出缺席與進度狀態 -->
+        <div class="card card-full">
+            <h2>📌 本週會議狀態與既有研究主軸銜接</h2>
+            <div class="warning-box">
+                <strong>本週狀態（2026/11/23）：請假缺席（無新增口頭報告紀錄）</strong><br>
+                本次研討會由張德裕、林裕芳與陳柏光進行報告與互評，美妃本週未出席。以下彙整其前次已確立之博士論文第一篇核心架構，作為下週會報之銜接基準。
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>研究模組與核心文獻</th>
+                        <th>既有模型設定與進展</th>
+                        <th>銜接重點與待驗證方向</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>經典基準模型複現<br>(Calvano et al., 2020 AER)</strong></td>
+                        <td>以多代理人強化學習（Multi-Agent Q-Learning）模擬雙寡頭重複定價賽局，驗證演算法在無明示溝通下達成<strong>默契勾結（Algorithmic Collusion）</strong>。</td>
+                        <td>確認基準模擬環境之超參數（學習率 &alpha;、探索率 &epsilon;、折現因子 &delta;）收斂穩定度。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>AI 服務業成本與定價擴充</strong></td>
+                        <td>結合生成式 AI 產業特性：<strong>趨近零邊際成本（Zero Marginal Cost）</strong>與<strong>階層訂閱定價（Tiered Subscription Pricing）</strong>。</td>
+                        <td>檢視免費版（Freemium）與付費版（Pro/Plus）雙層定價結構下，演算法是否會誘導消費者升級並維持高價均衡。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>產業實務參數對接<br>(跨組互補參考)</strong></td>
+                        <td>可參考張德裕學長近期訪談之本土 API 服務商收費結構（企業訂閱價 vs. 底層 Token 算力成本價差）。</td>
+                        <td>將真實算力邊際成本與訂閱定價區間納入 ABM 利潤函數校準，提升實證說服力。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 模型核心機制 -->
+        <div class="card">
+            <h2>⚙️ 代理人模擬 (ABM) 演算法核心設計</h2>
+            <p>Q-Learning 狀態-行動價值更新方程式：</p>
+            <div class="formula-box">Q<sub>t+1</sub>(s<sub>t</sub>, a<sub>t</sub>) = (1 &minus; &alpha;)Q<sub>t</sub>(s<sub>t</sub>, a<sub>t</sub>) + &alpha;[&pi;<sub>t</sub> + &delta; max<sub>a</sub> Q<sub>t</sub>(s<sub>t+1</sub>, a)]</div>
+            <ul>
+                <li><span class="badge">定價空間離散化</span> 將連續訂閱價格與功能階梯離散化為有限行動集合（Action Space），觀察廠商在多期重複賽局中的定價演化路徑。</li>
+                <li><span class="badge">懲罰機制檢驗</span> 測試當一方偏離高價均衡（降價搶市）時，對手演算法是否會觸發報復性降價並重新收斂至合作高價。</li>
+            </ul>
+        </div>
+
+        <!-- 反壟斷政策與福利分析 -->
+        <div class="card">
+            <h2>⚖️ 反壟斷監管與消費者福利評估</h2>
+            <div class="info-box">
+                <strong>政策意涵與福利指標計算：</strong><br>
+                • <strong>超額利潤指標（&Delta;）：</strong>衡量演算法均衡利潤相對於完全競爭（Bertrand-Nash）與獨占（Monopoly）利潤的相對位置。<br>
+                • <strong>監管介入模擬：</strong>探討在零邊際成本與演算法定價普及下，傳統反托拉斯法（需證明主觀合謀意圖）面臨的執法盲點，以及強制價格透明度或演算法審計的政策效果。
+            </div>
+        </div>
+
+        <!-- 下週會報待辦清單 -->
+        <div class="card card-full">
+            <h2>📋 下週會報工作待辦清單 (Action Items)</h2>
+            <ol>
+                <li>
+                    <strong>展示基準 Q-Learning 模擬收斂圖表：</strong><br>
+                    於下週會議呈現 Calvano et al. (2020) 基準模型與納入「零邊際成本／階層訂閱制」後的平均定價軌跡與利潤收斂結果。
+                </li>
+                <li>
+                    <strong>執行異質性消費者偏好評估：</strong><br>
+                    區分高算力需求（企業／重度用戶）與低算力需求（一般用戶）之價格彈性，檢驗階層定價下的消費者剩餘變化。
+                </li>
+                <li>
+                    <strong>推進博士論文第一篇初稿架構：</strong><br>
+                    比照本週研討會確立之寫作節奏，整理文獻回顧（演算法勾結、平台經濟與階層定價）並定錨模擬實驗設計章節。
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 淡江大學 經濟學系 - 柯美妃 博士論文研究專案紀錄</p>
+    </footer>
+</div>
+
+</body>
+</html>
